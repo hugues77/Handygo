@@ -1,0 +1,1 @@
+<h2> Je suis la reservation <?= $params['slug']?> et l'ID est : <?= $params['id']?> </h2>
