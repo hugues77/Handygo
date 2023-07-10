@@ -15,11 +15,9 @@ $row2 = details_reservation($ref_voy, $_SESSION['unique_id'] ); //lier la table 
 $rep = $row2->fetch(PDO::FETCH_ASSOC);
 
 $prix_bag = $rep['Prix_bag'] ? $rep['Prix_bag'] : 0;
-$prix_cr  = $rep['Prix_courrier'] ? $rep['Prix_courrier'] : 0;
 $user_id_voyageur = $rep['user_id'];  
 
 $nb_bag = ($rep['nbre_bag'] < 10) ? '0'.$rep['nbre_bag'] : $rep['nbre_bag'];
-$nb_courr = ($rep['nbre_doc'] < 10) ? '0'.$rep['nbre_doc'] : $rep['nbre_doc'];
 
 //bagage reserve dans trip
 $reslt = total_bagage_reservation($ref_voy); 
@@ -68,8 +66,7 @@ $reslt = total_bagage_reservation($ref_voy);
                         <input type="text" name="b_reserver_initial" value="<?= $nb_bag?>" hidden>
                         
                         <div class="bagage">
-                            <p class="<?= ($prix_bag == 0) ? 'btn-grise' : ''?>">Choisir le Nombre de kg / bagage souhaités</p>
-                            <p class="<?= ($prix_cr == 0) ? 'btn-grise' : ''?>">Choisir le Nombre de courriers souhaités</p>
+                            <p class="<?= ($prix_bag == 0) ? 'btn-grise' : ''?>">Choisir le Nombre de places / personne souhaités</p>
                         </div>
                         <div class="confirm-prix">
                             <div class="nouveau_p field"> 
@@ -79,19 +76,12 @@ $reslt = total_bagage_reservation($ref_voy);
                                     <span class="plus_bag upd">+</span>  
                                 </div>
                             </div>
-                            <div class="nouveau_p prix_cr field ">
-                                <div class="wrapper_prix <?= ($prix_cr == 0) ? 'btn-grise' : ''?>">
-                                    <span class="minus_cr upd">-</span>
-                                    <input type="text" name="qtyBox_cr_upd" id="qtyBox_cr_upd" value="<?=$nb_courr ? $nb_courr : 0?>">
-                                    <span class="plus_cr upd">+</span>
-                                </div>
-                            </div>
+                
                         </div>
                     </div>
                     <hr> 
                     <div class="p-total">
                         <?= ($prix_bag > 0 ) ? '<p>Prix Total bagage : <b class="p-total-bag-upd">'.($rep['nbre_bag']*$prix_bag).'</b> €</p>' : '' ?>
-                        <?= ($prix_cr > 0) ? '<p class="total-doc">Prix Total documents : <b class="p-total-doc-upd">'.($rep['nbre_doc']*$prix_cr).'</b> €</p>' : '' ?> 
                     </div>
                     <div class="description-res">
                         <label for="description-res">Indiquez une brève description pour votre réservation</label>

@@ -46,7 +46,7 @@ if(isset($_SESSION['unique_id'])){
         echo "vous avez oublier de remplir la brève description !"; 
     }else{
         // update the data of trip reservation
-        $datares = update_trip_reservation($user_id_client, $trip_id, $nb_kg_bag, $nb_courr,$prixTotBag,$prixTotDoc,$descript_reservation);
+        $datares = update_trip_reservation($user_id_client, $trip_id, $nb_kg_bag,$prixTotBag, $descript_reservation);
 
         if($datares){
             //update bagage disponible pour prochains client

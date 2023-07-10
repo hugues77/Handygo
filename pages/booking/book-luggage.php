@@ -53,14 +53,12 @@ if(!isset($_SESSION['unique_id'])){
                 <form  class="form-confirm">
                     <div class="prix-reservation ">
                         <div class="bagage">
-                            <p class="<?= ($prix_bag == 0) ? 'btn-grise' : ''?>">Choisir le Nombre de kg / bagage souhaités</p>
-                            <p class="<?= ($prix_cr == 0) ? 'btn-grise' : ''?>">Choisir le Nombre de courriers souhaités</p>
+                            <p class="<?= ($prix_bag == 0) ? 'btn-grise' : ''?>">Choisir le Nombre de places / personne souhaités</p>
                         </div>
                         <div class="confirm-prix">
                             <div class="nouveau_p field"> 
 
                                 <input type="text" name="prixBag_kg" value="<?= $prix_bag?>" hidden> 
-                                <input type="text" name="prixDoc" value="<?= $prix_cr ?>" hidden>
 
                                 <input type="text" name="user_id_voyageur" value="<?= $ID_user_voyageur ?>" hidden>
 
@@ -78,19 +76,12 @@ if(!isset($_SESSION['unique_id'])){
                                     <span class="plus_bag">+</span> 
                                 </div> 
                             </div>
-                            <div class="nouveau_p prix_cr field ">
-                                <div class="wrapper_prix <?= ($prix_cr == 0) ? 'btn-grise' : ''?>">
-                                    <span class="minus_cr">-</span>
-                                    <input type="text" name="qtyBox_cr_confirm" id="qtyBox_cr" value="0">
-                                    <span class="plus_cr">+</span>
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
                     <hr>
                     <div class="p-total">
                         <?= ($prix_bag > 0) ? '<p>Prix Total bagage : <b class="p-total-bag">0</b> €</p>' : '' ?>
-                        <?= ($prix_cr > 0) ? '<p class="total-doc">Prix Total documents : <b class="p-total-doc">0</b> €</p>' : '' ?>
                     </div>
                     <div class="description-res">
                         <label for="description-res">Indiquez une brève description pour votre réservation</label>

@@ -92,9 +92,9 @@ if(!$res){
                                     <img src="../images/car.png" alt="" style = transform:scaleX(-1)>
                                     <i class="fas fa-chevron-right"></i>
                                     ';
-                                }elseif($res['Mode_voy'] == 'avion'){
+                                }elseif($res['Mode_voy'] == 'taxi'){
                                     echo '
-                                    <img src="../images/airplane.png" alt="">
+                                    <img src="../images/taxi.jpg" alt="">
                                     <i class="fas fa-chevron-right"></i>
                                     ';
                                 }elseif($res['Mode_voy'] == 'bus'){
@@ -104,7 +104,7 @@ if(!$res){
                                     ';
                                 }else{
                                     echo '
-                                    <img src="../images/boat.png" alt="">
+                                    <img src="../images/moto.jpg" alt="">
                                     <i class="fas fa-chevron-right"></i>
                                     ';
                                 }

@@ -1,5 +1,5 @@
 <!-- Notre devise, section start -->
-<section class="faq" id="faq">
+<section class="faq" id="faq"> 
     <div class="max-width">
         <h2 class="title">Faq</h2>
         <div class="faq-content">

@@ -17,9 +17,7 @@
                                             <div class="voyage">
                                                 <div class="heure">
                                                     <div><?= date("H:i",strtotime($row['Heure_depart'])) ?></div>
-                                                    <small><?= date("d/m/Y",strtotime($row['Date_depart'])) ?></small>
                                                     <div class="margheur"><?=date("H:i",strtotime($row['Heure_arrivee'])) ?></div>
-                                                    <small><?= date("d/m/Y",strtotime($row['Date_arrivee'])) ?></small>
                                                 </div>
                                                 <div class="direction">
                                                     <div class="direction-ville">
@@ -29,8 +27,8 @@
                                                 </div>
                                                 
                                                 <div class="prix">
-                                                    <?= $row['Prix_bag'] ? '<p><i class="fas fa-luggage-cart"></i>'.$row['Prix_bag'].'€ / Kg</p>' :'' ?> 
-                                                    <?= $row['Prix_courrier'] ? "<p class='margprix'><i class='fas fa-mail-bulk'></i>".$row['Prix_courrier']."€ / Cr</p>": '' ?> 
+                                                    <?= $row['Prix_bag'] ? '<p><i class="fa fa-bolt-lightning"></i>'.$row['Prix_bag'].' CDF / Pl</p>' :'' ?> 
+                                                    
                                                 </div>
                                             </div>
                                             <hr>
@@ -46,9 +44,9 @@
                                                             echo '
                                                             <i class="fas fa-car"></i>
                                                             ';
-                                                        }elseif($row['Mode_voy'] == 'avion'){
+                                                        }elseif($row['Mode_voy'] == 'taxi'){
                                                             echo '
-                                                            <i class="fas fa-plane-departure"></i>
+                                                            <i class="fas fa-taxi-bus"></i>
                                                             ';
                                                         }elseif($row['Mode_voy'] == 'bus'){
                                                             echo '
@@ -56,7 +54,7 @@
                                                             ';
                                                         }else{
                                                             echo '
-                                                            <i class="fas fa-ship"></i>
+                                                            <i class="fas fa-motorcycle"></i>
                                                             ';
                                                         }
                                                     ?>

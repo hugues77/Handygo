@@ -26,7 +26,7 @@ const formOuter = document.querySelector('.form-outer form');
 
 const itineraireBtn = formOuter.querySelector(".itineraire .nextBtn .button-1");
 const dateBtn = formOuter.querySelector(".date .btns .button-2"); 
-const bagageBtn = formOuter.querySelector(".bagage .btns .button-3");
+const placeBtn = formOuter.querySelector(".place .btns .button-3");
 const paiementBtn = formOuter.querySelector(".paiement .btns .button-4");
 const confirmBtn = formOuter.querySelector(".confirmation .btns .button-5");
 
@@ -72,29 +72,29 @@ $(document).ready(function () {
     }
   });
 
-  $(".input-3").keyup(function () {
-    if ($(this).val() == "") {
-      $(".button-3").css("disabled", "true");
-      // $(this).addClass("active");
-    } else {
-      $(this).removeClass("error");
-      $(".button-3").css("opacity", "1");
-      $(".button-3").css("cursor", "pointer");
-      $(".button-3").css("disabled", "false");
-    }
-  });
+  // $(".input-3").keyup(function () {
+  //   if ($(this).val() == "") {
+  //     $(".button-3").css("disabled", "true");
+  //     // $(this).addClass("active");
+  //   } else {
+  //     $(this).removeClass("error");
+  //     $(".button-3").css("opacity", "1");
+  //     $(".button-3").css("cursor", "pointer");
+  //     $(".button-3").css("disabled", "false");
+  //   }
+  // });
 
-  $(".input-4").keyup(function () {
-    if ($(this).val() == "") {
-      $(".button-4").css("disabled", "true");
-      // $(this).addClass("active");
-    } else {
-      $(this).removeClass("error");
-      $(".button-4").css("opacity", "1");
-      $(".button-4").css("cursor", "pointer");
-      $(".button-4").css("disabled", "false");
-    }
-  });
+  // $(".input-4").keyup(function () {
+  //   if ($(this).val() == "") {
+  //     $(".button-4").css("disabled", "true");
+  //     // $(this).addClass("active");
+  //   } else {
+  //     $(this).removeClass("error");
+  //     $(".button-4").css("opacity", "1");
+  //     $(".button-4").css("cursor", "pointer");
+  //     $(".button-4").css("disabled", "false");
+  //   }
+  // });
 
   $(".input-5").keyup(function () {
     if ($(this).val() == "") {
@@ -175,7 +175,7 @@ dateBtn.onclick = () =>{
 }
 
 //bouton bagages post trip
-bagageBtn.onclick = () =>{
+placeBtn.onclick = () =>{
   //let's start Ajax
   let xhr = new XMLHttpRequest();
   xhr.open("POST", "../ajax/post-trip/bagage.php", true);
@@ -447,7 +447,7 @@ $("button.prix").click(function(){
   $('.nouveau_p').css('display','flex');
 });
 
-//Traitement incremmentation prix Bagages / Page post trip
+//Traitement incremmentation places passagers / Page post trip
 const plus = document.querySelector(".plus");
 const minus = document.querySelector(".minus");
 const num = document.querySelector("#qtyBox");
@@ -455,9 +455,9 @@ const num = document.querySelector("#qtyBox");
 // let a = 1;
 
 plus.addEventListener("click", ()=>{
-  $(".button-4").css("opacity", "1");
-  $(".button-4").css("cursor", "pointer");
-  $(".button-4").css("disabled", "false");
+  $(".button-3").css("opacity", "1");
+  $(".button-3").css("cursor", "pointer");
+  $(".button-3").css("disabled", "false");
   // a++;
   // a = (a < 10) ? "0" + a : a;
   // num.innerHTML =  a;
@@ -476,7 +476,7 @@ minus.addEventListener("click", ()=>{
   }
 });
 
-//Traitement incremmentation prix Courriers 
+//Traitement incremmentation prix par place 
 const plus2 = document.querySelector(".plus2");
 const minus2 = document.querySelector(".minus2");
 const num2 = document.querySelector("#qtyBox2");
@@ -486,7 +486,7 @@ plus2.addEventListener("click", ()=>{
   $(".button-4").css("cursor", "pointer");
   $(".button-4").css("disabled", "false");
 
-  num2.value = parseInt(num2.value) + 1;
+  num2.value = parseInt(num2.value) + 100;
   num2.value = (num2.value < 10) ? "0"+num2.value : num2.value;
 
 });
@@ -496,7 +496,7 @@ minus2.addEventListener("click", ()=>{
   $(".button-4").css("cursor", "pointer");
   $(".button-4").css("disabled", "false");
   if(num2.value > 0){
-    num2.value = parseInt(num2.value) - 1;
+    num2.value = parseInt(num2.value) - 100;
     num2.value = (num2.value < 10) ? "0"+num2.value : num2.value;
   }
 });

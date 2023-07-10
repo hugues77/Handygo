@@ -134,24 +134,24 @@ if(!function_exists('insert_trip')){
 
 //Update into trip in the database for date
 if(!function_exists('update_trip_date')){ 
-    function update_trip_date($d_depart, $d_arrivee, $h_depart, $h_arrivee, $ref,  $date_voy){
+    function update_trip_date($d_depart, $h_depart, $h_arrivee, $ref,  $date_voy){
         global $connexion;
        
-        $trip_date = $connexion->prepare("UPDATE trip SET Date_depart =:Date_depart, Date_arrivee =:Date_arrivee, Heure_depart =:Heure_depart, Heure_arrivee =:Heure_arrivee, date_voy =:date_voy WHERE ref_voy =:ref_voy");
-        $trip_date->execute(array('Date_depart' => $d_depart, 'Date_arrivee' => $d_arrivee, 'Heure_depart' => $h_depart, 'Heure_arrivee' => $h_arrivee, 'date_voy' => $date_voy, 'ref_voy' =>$ref)); 
+        $trip_date = $connexion->prepare("UPDATE trip SET Date_depart =:Date_depart, Heure_depart =:Heure_depart, Heure_arrivee =:Heure_arrivee, date_voy =:date_voy WHERE ref_voy =:ref_voy");
+        $trip_date->execute(array('Date_depart' => $d_depart, 'Heure_depart' => $h_depart, 'Heure_arrivee' => $h_arrivee, 'date_voy' => $date_voy, 'ref_voy' =>$ref)); 
         return $trip_date;
     }
 }
 
 //Update into trip in the database for Bagage  
-if(!function_exists('update_trip_bagage')){
-    function update_trip_bagage($bagage, $courrier, $taille_s, $taille_m, $taille_l, $taille_xl, $taille_xxl, $descrip_bagage, $ref){
+if(!function_exists('update_trip_place')){
+    function update_trip_place($place, $ref){
         global $connexion;
         $bagage_title = 1;
 
-        $trip_bagage = $connexion->prepare("UPDATE trip SET Bagage_dispo =:Bagage_dispo, Courrier_dispo =:Courrier_dispo, Taille_bag_s =:Taille_bag_s, Taille_bag_m =:Taille_bag_m, Taille_bag_l =:Taille_bag_l, Taille_bag_xl =:Taille_bag_xl, Taille_bag_xxl =:Taille_bag_xxl, Descrip_bagage =:Descrip_bagage, bagage_title =:bagage_title WHERE ref_voy =:ref_voy");
+        $trip_bagage = $connexion->prepare("UPDATE trip SET Bagage_dispo =:Bagage_dispo WHERE ref_voy =:ref_voy");
 
-        $trip_bagage->execute(array('Bagage_dispo' => $bagage, 'Courrier_dispo' => $courrier, 'Taille_bag_s' => $taille_s, 'Taille_bag_m' => $taille_m, 'Taille_bag_l' => $taille_l, 'Taille_bag_xl' => $taille_xl, 'Taille_bag_xxl' => $taille_xxl, 'Descrip_bagage' => $descrip_bagage, 'bagage_title' => $bagage_title, 'ref_voy' =>$ref));
+        $trip_bagage->execute(array('Bagage_dispo' => $place, 'bagage_title' => $bagage_title, 'ref_voy' =>$ref));
         return $trip_bagage;
     }
 }
@@ -180,11 +180,11 @@ if(!function_exists('update_paiement')){
 
 //Update into trip in the database for prix recommandé pour juste bagage
 if(!function_exists('update_trip_prix_b')){
-    function update_trip_prix_b($prix_bag, $ref, $user_id){
+    function update_trip_prix($prix, $ref, $user_id){
         global $connexion;
-        $trip_prix_b = $connexion->prepare("UPDATE trip INNER JOIN users ON users.unique_id = trip.user_id SET prix_bag =:prix_bag WHERE ref_voy =:ref_voy AND user_id =:user_id");
-        $trip_prix_b->execute(array('prix_bag' => $prix_bag, 'ref_voy' =>$ref, 'user_id' => $user_id));
-        return $trip_prix_b;
+        $trip_prix = $connexion->prepare("UPDATE trip INNER JOIN users ON users.unique_id = trip.user_id SET prix_bag =:prix_bag WHERE ref_voy =:ref_voy AND user_id =:user_id");
+        $trip_prix->execute(array('prix_bag' => $prix, 'ref_voy' =>$ref, 'user_id' => $user_id));
+        return $trip_prix;
     }
 }
 //Update into trip in the database for prix recommandé pour juste courrier
@@ -282,21 +282,21 @@ if(!function_exists('date_arr')){
 
 //insert into resevation in the database for reservation trip
 if(!function_exists('insert_trip_reservation')){
-    function insert_trip_reservation($user1, $user2, $trip_id, $nb1, $nb2,$prix1, $prix2, $description){ 
+    function insert_trip_reservation($user1, $user2, $trip_id, $nb1,$prix1, $prix2, $description){ 
         global $connexion;
-        $sql2 = "INSERT INTO reservation (ID_user_voyageur, ID_user_client,  Trip_ID, nbre_bag, nbre_doc, prix_tot_bag, prix_tot_doc, Description_res) VALUES (?,?,?,?,?,?,?,?)";
+        $sql2 = "INSERT INTO reservation (ID_user_voyageur, ID_user_client,  Trip_ID, nbre_bag, prix_tot_bag, prix_tot_doc, Description_res) VALUES (?,?,?,?,?,?,?,?)";
         $req = $connexion->prepare($sql2);
-        $data_insert_res = $req->execute(array($user1, $user2, $trip_id, $nb1, $nb2, $prix1, $prix2, $description));
+        $data_insert_res = $req->execute(array($user1, $user2, $trip_id, $nb1, $prix1, $prix2, $description));
         return $data_insert_res;
     }
 }
 
 //Update into booking in the database for reservation
 if(!function_exists('update_trip_reservation')){ 
-    function update_trip_reservation($user2, $trip_id, $nb1, $nb2,$prix1, $prix2, $description){
+    function update_trip_reservation($user2, $trip_id, $nb1,$prix1, $description){
         global $connexion;
-        $upt_res = $connexion->prepare("UPDATE reservation SET nbre_bag =:nbre_bag, nbre_doc =:nbre_doc, prix_tot_bag =:prix_tot_bag, prix_tot_doc =:prix_tot_doc, description_res =:description_res WHERE trip_id =:trip_id AND ID_user_client =:ID_user_client");
-        $upt_res->execute(array('description_res' => $description, 'ID_user_client' =>$user2, 'trip_id' =>$trip_id, 'nbre_bag' =>$nb1, 'nbre_doc' =>$nb2, 'prix_tot_bag' =>$prix1, 'prix_tot_doc' =>$prix2));
+        $upt_res = $connexion->prepare("UPDATE reservation SET nbre_bag =:nbre_bag, prix_tot_bag =:prix_tot_bag, description_res =:description_res WHERE trip_id =:trip_id AND ID_user_client =:ID_user_client");
+        $upt_res->execute(array('description_res' => $description, 'ID_user_client' =>$user2, 'trip_id' =>$trip_id, 'nbre_bag' =>$nb1));
         return $upt_res;
     }
 }
@@ -324,31 +324,31 @@ if(!function_exists('update_itineraire_trip')){
 }
 // update date trip in the database - modify trip 
 if(!function_exists('update_modify_date')){
-    function update_modify_date($date1, $date2, $h_depart, $h_arrivee, $ref, $user_id){
+    function update_modify_date($date1, $h_depart, $h_arrivee, $ref, $user_id){
         global $connexion;
-        $sql2 = "UPDATE trip SET date_depart =:date_depart, date_arrivee =:date_arrivee, Heure_depart =:Heure_depart, heure_arrivee =:heure_arrivee WHERE ref_voy =:ref_voy AND user_id =:user_id";
+        $sql2 = "UPDATE trip SET date_depart =:date_depart, Heure_depart =:Heure_depart, heure_arrivee =:heure_arrivee WHERE ref_voy =:ref_voy AND user_id =:user_id";
         $data_upd = $connexion->prepare($sql2);
-        $data_upd->execute(array('date_depart' =>$date1, 'date_arrivee' => $date2, 'heure_depart' => $h_depart,'heure_arrivee' => $h_arrivee, 'ref_voy' =>$ref, 'user_id'=>$user_id));
+        $data_upd->execute(array('date_depart' =>$date1, 'heure_depart' => $h_depart,'heure_arrivee' => $h_arrivee, 'ref_voy' =>$ref, 'user_id'=>$user_id));
         return $data_upd;
     }
 }
 // update paiement trip in the database - modify trip 
 if(!function_exists('update_modify_paiement')){
-    function update_modify_paiement($prix_bag, $prix_courr, $ref, $user_id){
+    function update_modify_paiement($prix_bag, $ref, $user_id){
         global $connexion;
-        $sql2 = "UPDATE trip SET prix_bag =:prix_bag, prix_courrier =:prix_courrier WHERE ref_voy =:ref_voy AND user_id =:user_id";
+        $sql2 = "UPDATE trip SET prix_bag =:prix_bag WHERE ref_voy =:ref_voy AND user_id =:user_id";
         $data_upd = $connexion->prepare($sql2);
-        $data_upd->execute(array('prix_bag' =>$prix_bag, 'prix_courrier' => $prix_courr, 'ref_voy' =>$ref, 'user_id'=>$user_id));
+        $data_upd->execute(array('prix_bag' =>$prix_bag, 'ref_voy' =>$ref, 'user_id'=>$user_id));
         return $data_upd;
     }
 }
 
 // update confirm trip in the database - modify trip 
 if(!function_exists('update_modify_confirmation')){
-    function update_modify_confirmation($tel2, $description, $adresse, $ref, $user_id){
+    function update_modify_confirmation($tel2, $description, $ref, $user_id){
         global $connexion;
-        $trip_confirm = $connexion->prepare("UPDATE trip, users SET description_trip =:description_trip, adresse_trip =:adresse_trip, tel2 =:tel2 WHERE ref_voy =:ref_voy AND user_id =:user_id AND trip.user_id = users.unique_id");
-        $trip_confirm->execute(array('description_trip' => $description, 'adresse_trip' =>$adresse, 'tel2' =>$tel2, 'user_id' =>$user_id, 'ref_voy' =>$ref ));
+        $trip_confirm = $connexion->prepare("UPDATE trip, users SET description_trip =:description_trip, tel2 =:tel2 WHERE ref_voy =:ref_voy AND user_id =:user_id AND trip.user_id = users.unique_id");
+        $trip_confirm->execute(array('description_trip' => $description,  'tel2' =>$tel2, 'user_id' =>$user_id, 'ref_voy' =>$ref ));
         return $trip_confirm;
     }
 }

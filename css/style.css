@@ -2688,7 +2688,7 @@ font-family: "Popins", sans-serif;
   font-size: 25px;
   font-weight: 500;
   border-bottom: 10px solid #005b8f;
-  margin-bottom: 45px;
+  margin-bottom: 15px;
 }
 .post-trip .post-content .container form .page .field{
   height: 45px;
@@ -2697,6 +2697,10 @@ font-family: "Popins", sans-serif;
   margin: 35px 0;
   position: relative;
 }
+.post-trip .post-content .container form .page .field .label{
+  margin-top: 8px;
+}
+
 .post-trip .post-content .container form .page .mode{
   display: grid;
   grid-template-columns: 43% 57%;
@@ -2948,7 +2952,7 @@ font-family: "Popins", sans-serif;
   border-radius: 50px;
   transition: 0.3s ease;
   opacity: 1;
-  margin-top: 8px;
+  margin-top: 5px;
   position: relative;
   bottom: 10px;
 }
@@ -2963,6 +2967,7 @@ font-family: "Popins", sans-serif;
 .modify-trip .form-modify-trip form .nouveau_p.prix_cr{
   margin-top: 80px;
 }
+.post-trip .post-content .container form .page .wrapper_prix,
 .post-trip .post-content .container form .page .nouveau_p .wrapper_prix,
 .modify-trip .form-modify-trip form .nouveau_p .wrapper_prix{
   width: 100%;
@@ -2974,8 +2979,10 @@ font-family: "Popins", sans-serif;
   color: #fff;
   border-radius: 12px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  margin-top: 5px;
+  margin-top: 8px;
 }
+.post-trip .post-content .container form .page  .wrapper_prix span,
+.post-trip .post-content .container form .page  .wrapper_prix input,
 .post-trip .post-content .container form .page .nouveau_p .wrapper_prix span,
 .post-trip .post-content .container form .page .nouveau_p .wrapper_prix input,
 .modify-trip .form-modify-trip form .nouveau_p .wrapper_prix span,
@@ -2985,32 +2992,32 @@ font-family: "Popins", sans-serif;
   font-size: 45px;
   font-weight: 600;
 }
-.post-trip .post-content .container form .page .nouveau_p .wrapper_prix span.plus,
-.post-trip .post-content .container form .page .nouveau_p .wrapper_prix span.plus2{
+.post-trip .post-content .container form .page .wrapper_prix span.plus,
+.post-trip .post-content .container form .page .wrapper_prix span.plus2{ 
   font-size: 40px;
   /* border-right: 2px solid rgba(0, 0, 0, 0.2); */
   border-left: 2px solid rgba(0, 0, 0, 0.2);
   cursor: pointer;
   margin: 5px;
 }
-.modify-trip .form-modify-trip form .nouveau_p .wrapper_prix span.plus,
-.modify-trip .form-modify-trip form .nouveau_p .wrapper_prix span.plus2{
+.modify-trip .form-modify-trip form .wrapper_prix span.plus,
+.modify-trip .form-modify-trip form .wrapper_prix span.plus2{
   font-size: 40px;
   /* border-right: 2px solid rgba(0, 0, 0, 0.2); */
   border-left: 4px solid #fff;
   cursor: pointer;
   margin: 5px;
 }
-.post-trip .post-content .container form .page .nouveau_p .wrapper_prix span.minus,
-.post-trip .post-content .container form .page .nouveau_p .wrapper_prix span.minus2{
+.post-trip .post-content .container form .page .wrapper_prix span.minus,
+.post-trip .post-content .container form .page .wrapper_prix span.minus2{
   font-size: 40px;
   border-right: 2px solid rgba(0, 0, 0, 0.2);
   /* border-left: 2px solid rgba(0, 0, 0, 0.2); */
   cursor: pointer;
   margin: 5px;
 }
-.modify-trip .form-modify-trip form .nouveau_p .wrapper_prix span.minus,
-.modify-trip .form-modify-trip form .nouveau_p .wrapper_prix span.minus2{
+.modify-trip .form-modify-trip form .wrapper_prix span.minus,
+.modify-trip .form-modify-trip form .wrapper_prix span.minus2{
   font-size: 40px;
   border-right: 4px solid #fff;
   /* border-left: 2px solid rgba(0, 0, 0, 0.2); */
@@ -3018,8 +3025,8 @@ font-family: "Popins", sans-serif;
   margin: 5px;
 }
 
-.post-trip .post-content .container form .page p.nouveau_p,
-.post-trip .post-content .container form .page p.ancien_p,
+.post-trip .post-content .container form .page,
+.post-trip .post-content .container form .page,
 .modify-trip .form-modify-trip form p.nouveau_p{
   position: relative;
   margin-bottom: -17px;
@@ -3062,6 +3069,9 @@ font-family: "Popins", sans-serif;
   top: -22px;
   text-align: right;
 }
+.post-trip .post-content .container form .page p{
+  margin-top: 10px;
+}
 .post-trip .post-content .container form .page p .count,
 .modify-trip .form-modify-trip form p .count{
   color: crimson;
@@ -3077,7 +3087,7 @@ font-family: "Popins", sans-serif;
 }
 .post-trip .post-content .container form .page .btn-confirm{
   position: relative;
-  top: 20px;
+  top: 5px;
 }
 .post-trip .post-content .container form .page .confirm-voy,
 .modify-trip .form-modify-trip form .confirm-voy{

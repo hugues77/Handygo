@@ -41,8 +41,9 @@ if (isset($_SESSION['unique_id'])) {
                         <div class="time">Step 2</div>
                         <div class="content">
                             <h2 class="title">Mes Dates</h2>
-                            <p>Date Départ : <?= date("d/m/Y", strtotime($row['Date_depart'])) ?> à <?= date("H:i", strtotime($row['Heure_depart'])) ?></p>
-                            <p>Date Arrivée : <?= date("d/m/Y", strtotime($row['Date_arrivee'])) . ' à ' . date("H:i", strtotime($row['Heure_arrivee'])) ?></p>
+                            <h4><?= date("d/m/Y", strtotime($row['Date_depart'])) ?></h4>
+                            <p>Heure départ Départ : <?= date("d/m/Y", strtotime($row['Date_depart'])) ?> à <?= date("H:i", strtotime($row['Heure_depart'])) ?></p>
+                            <p>Heure d'arrivée : <?= date("d/m/Y", strtotime($row['Date_depart'])) . ' à ' . date("H:i", strtotime($row['Heure_arrivee'])) ?></p>
                         </div>
                     </div>
                 <?php endif;
@@ -51,17 +52,9 @@ if (isset($_SESSION['unique_id'])) {
                     <div class="timeline-item">
                         <div class="time">Step 3</div>
                         <div class="content">
-                            <h2 class="title">Bagages Souhaités</h2>
-                            <p>Je dipose pour mes clients <?= $row['Bagage_dispo'] ?> Kg</p>
-                            <p><?= (!empty($row['Courrier_dispo']) ? 'Je prendrais aussi des documents soit, ' . $row['Courrier_dispo'] . ' documents' : '') ?></p>
-                            <p class="Taille_bag">Tailles des bagages acceptés :
-                                <?= ($row['Taille_bag_s'] == 1) ? '<span>Taille S </span>' : '' ?>
-                                <?= ($row['Taille_bag_m'] == 1) ? '<span> Taille M </span>' : '' ?>
-                                <?= ($row['Taille_bag_l'] == 1) ? '<span>Taille L </span>' : '' ?>
-                                <?= ($row['Taille_bag_xl'] == 1) ? '<span> Taille XL </span>' : '' ?>
-                                <?= ($row['Taille_bag_xxl'] == 1) ? '<span> Taille XXL </span>' : '' ?></p>
-
-                            <p><?= (!empty($row['Descrip_bagage']) ? '<hr><i class="fas fa-quote-left"></i>' . $row['Descrip_bagage'] . '<i class="fas fa-quote-right"></i></p>' : "") ?>
+                            <h2 class="title">Nombres de places Souhaités</h2>
+                            <p>Je dipose pour mes clients <?= $row['Bagage_dispo'] ?> places</p>
+                            
                         </div>
                     </div>
                 <?php endif;
@@ -71,8 +64,7 @@ if (isset($_SESSION['unique_id'])) {
                         <div class="time">Step 4</div>
                         <div class="content">
                             <h2 class="title">Prix proposé</h2>
-                            <p>Je vous propose <?= $row['Prix_bag'] ?> € / Kg </p>
-                            <p>Pour les documents : <?= $row['Prix_courrier'] ?> € / Document </p>
+                            <p>Je vous propose <?= $row['Prix_bag'] ?> CDF / place </p>
                         </div>
                     </div>';
                 <?php endif;
@@ -83,7 +75,6 @@ if (isset($_SESSION['unique_id'])) {
                         <div class="content">
                             <h2 class="title">Confirmation</h2>
                             <p>Mon téléphone enregistré est <?= $row['Tel2'] ?> </p>
-                            <span><?= $row['Adresse_trip'] ? "J'aimerais vous rencontré à l'adresse suivant: " . $row['Adresse_trip'] : "" ?></span>
                             <hr>
                             <p><?= (!empty($row['Description_trip'])) ? $row['Description_trip'] : ""  ?> </p>
                         </div>

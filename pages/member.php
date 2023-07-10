@@ -76,7 +76,7 @@ require_once "layout/partials/topbar-2.php";
                             </div>
                             <div class="tete">
                                 <span>5</span>
-                                <h3>Mes treservations</h3>
+                                <h3>Mes reservations</h3>
                             </div>
                         </div>
                         <div class="column">
