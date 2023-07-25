@@ -131,7 +131,7 @@ CREATE TABLE  `users` (
   `Sexe` varchar(2) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `Statut` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `Bio` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `Image` varchar(100) DEFAULT "image.jpg"  COLLATE utf8mb4_unicode_ci,
+  `Image` varchar(100) DEFAULT "image.png"  COLLATE utf8mb4_unicode_ci,
   `Unique_ID` varchar(50)  CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `Date_naissance` date,
   `Password` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,

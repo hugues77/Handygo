@@ -155,7 +155,7 @@ require_once "layout/partials/topbar-2.php";
                             <div class="title1"> informations complémentaires</div>
                             <div class="field">
                                 <div class="label">confirmer Votre téléphone</div>
-                                <input type="number" name="tel-user" class="input-5">
+                                <input type="tel" name="tel-user" class="input-5"> 
                             </div>
                             <div class="descrip-voy">
                                 <div class="label">Description du trajet</div>

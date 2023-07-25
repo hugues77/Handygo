@@ -25,7 +25,11 @@
   
   <!-- style css -->
   <link rel="stylesheet" href="../../css/style.css">
-  <title><?= $title ? $title : 'Partage ton trajet' ?></title>
+
+  <!-- style css for flags country phone -->
+  <link rel="stylesheet" href="../../css/international-telephone-input.css">
+
+  <title><?= $title ? $title : 'Partage ton trajet' ?></title> 
 </head>
 
 <body class="">

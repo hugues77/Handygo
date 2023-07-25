@@ -25,7 +25,9 @@
                 $_SESSION['unique_id'] = $rows_login["Unique_ID"];
                 $_SESSION['prenom'] = $rows_login["Prenom"];
                 $_SESSION['nom'] = $rows_login["Nom"];
-                $_SESSION['image'] = $rows_login["Image"];
+                $_SESSION['image'] = $rows_login["Image"]; 
+                $_SESSION['time'] = $rows_login["User_time"];
+
                 
                 $success = 1;
                 $msg ="";

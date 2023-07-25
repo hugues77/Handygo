@@ -21,6 +21,9 @@
         <!-- <script src="../js/apiGooglePlaces.js"></script> -->
         <script src="../js/apiGoogle.js"></script>
 
+         <!-- Script for flags input telephone  -->
+        <script src="../js/intInput.js"></script>
+
         <!-- Script for Api Google Places / requete pour ville depart - postTrip  -->
        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBv9FpsD-phw3e2tIKoGf_8kCBXIhScBgk&libraries=places&callback=apiGooglePlace"></script>
 
@@ -44,6 +47,7 @@
         <script src="../js/confirmTrip.js"></script>
         <script src="../js/update-reservation.js"></script>
         <script src="../js/modify-trip.js"></script>
+        <script src="../js/international-telephone-input.js"></script>
 
     </body>
 </html>

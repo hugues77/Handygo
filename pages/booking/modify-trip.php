@@ -39,8 +39,8 @@ $verify_booked = $response_booked->rowCount();
                     <form autocomplete="off" class="form-confirm">
                         <!-- inputs en hidden -->
                         <input type="text" name="ref_voy_upd" value="<?= $ref_voy ?>" hidden> 
-                        <input type="text" name="bagage_dispo_mod" value="<?=$rep['Bagage_dispo']?>" hidden> 
-                        <input type="text" name="bagage_reserve_mod" value="<?=$rep['Bagage_reserve']?>" hidden>  
+                        <input type="text" name="bagage_dispo_mod" value="<?=$rep['nb_place']?>" hidden> 
+                        <input type="text" name="place_reserve" value="<?=$rep['place_reserve']?>" hidden>  
 
 
 
@@ -48,7 +48,7 @@ $verify_booked = $response_booked->rowCount();
                         <div class="trip-itineraire <?= ($verify_booked > 0) ? 'trip-itineraire-visible': ''?>">
 
                             <div class="title-trip-1">
-                                <div class="">Votre Itinéraire</div> 
+                                <div class="">Votre Itinéraire</div>  
                                 <div class="">
                                     <i class="fas fa-circle-plus" id="on-1"></i><i class="fas fa-circle-minus off-1"></i>
                                 </div>
@@ -66,8 +66,8 @@ $verify_booked = $response_booked->rowCount();
                                     <div class="title-mode">Mode de transport :</div>
                                     <div class="choix">
                                         <div class="av">
-                                            <input type="radio" value="avion" name="mode-voy-mod" id="av" class="choix-3" <?=$mod_voy ==='avion' ? 'checked' : ''  ?>>
-                                            <label for="av">Avion</label>
+                                            <input type="radio" value="taxi" name="mode-voy-mod" id="av" class="choix-3" <?=$mod_voy ==='taxi' ? 'checked' : ''  ?>>
+                                            <label for="av">Taxi</label>
                                         </div>
                                         <div class="bus">
                                             <input type="radio" value="bus" name="mode-voy-mod" id="bus" class="choix-3" <?=$mod_voy ==='bus' ? 'checked' : ''  ?>>
@@ -78,8 +78,8 @@ $verify_booked = $response_booked->rowCount();
                                             <label for="v">Voiture</label>
                                         </div>
                                         <div class="b">
-                                            <input type="radio" value="bateau" name="mode-voy-mod" id="b" class="choix-3" <?=$mod_voy ==='bateau' ? 'checked' : ''  ?>>
-                                            <label for="b">Bateau</label>
+                                            <input type="radio" value="moto" name="mode-voy-mod" id="b" class="choix-3" <?=$mod_voy ==='moto' ? 'checked' : ''  ?>>
+                                            <label for="b">Moto</label>
                                         </div>
                                     </div>
                                 </div>
@@ -123,7 +123,7 @@ $verify_booked = $response_booked->rowCount();
 
                         <div class="trip-bagage">
                             <div class="title-trip-3">
-                                <div class="">places Disponibles</div> 
+                                <div class="">Places Disponibles</div> 
                                 <div class="">
                                     <i class="fas fa-circle-plus" id="on-3"></i><i class="fas fa-circle-minus off-3"></i>
                                 </div>
@@ -131,7 +131,7 @@ $verify_booked = $response_booked->rowCount();
                             <div class="body-trip-3"> 
                                 <div class="field">
                                     <div class="label">Nombres de places Disponibles (personne)</div>
-                                    <input type="number" name="bagage_mod" value="<?=$rep['Bagage_dispo']?>" class="input-3">
+                                    <input type="number" name="place_mod" value="<?=$rep['nb_place']?>" class="input-3">
                                 </div>
                                 
                                 <div class="field btns">
@@ -150,7 +150,7 @@ $verify_booked = $response_booked->rowCount();
                             </div>
                             <div class="body-trip-4">
                                 <div class="nouveau_p field">
-                                    <div class="label">Modifier le Prix passagers (personnes) en  CDF</div>
+                                    <div class="label">Modifier le Prix passagers (place) en  CDF</div>
 
                                     <div class="wrapper_prix">
                                         <span class="m_minus minus">-</span>

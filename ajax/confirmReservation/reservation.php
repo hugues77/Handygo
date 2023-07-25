@@ -8,8 +8,8 @@
 
         $trip_id = htmlentities(trim($_POST['trip_id']));
 
-        $b_reserver = htmlentities(trim($_POST['bagage_reserver']));
-        $bagage_dispo = htmlentities(trim($_POST['bagage_dispo']));
+        $b_reserver = htmlentities(trim($_POST['place_reserve']));  
+        $bagage_dispo = htmlentities(trim($_POST['nb_place']));
 
 
         $nb_kg_bag = htmlentities(trim($_POST['qtyBox_bag_confirm']));
@@ -21,7 +21,6 @@
 
         //calcul du prix total pour une réservation
         $prixTotBag = ($prix_bag * $nb_kg_bag);
-        $prixTotDoc = ($prix_doc * $nb_courr); 
     
         //calcul du bagage reserve pour ce trajet + ref voy decoder
         $b_reserver_total = $nb_kg_bag + $b_reserver;
@@ -31,18 +30,18 @@
 
         if(($nb_kg_bag == 0)){
             //$_SESSION['ref'] = $ref_voy; //creating session of trip, la detruire après confirmation publication 
-            echo 'Merci de choisir le poids du colis ou le nombre de documents à envoyer';
+            echo 'Merci de choisir le nombre de(s) place(s) souhaités';
         }elseif($nb_kg_bag > $bag_pret){
-            echo "votre colis est supérieur au poids disponible. le poids actuel est de ".$bag_pret ;
+            echo "place demandé est supérieur au places disponible. Actuellement il y a ".$bag_pret ." place(s)";
         }
         // elseif($courrier_dispo < $nb_courr){
         //     echo 'le nombre des courrier est supérieur au nombre disponible. il reste '.$courrier_dispo.' pour vous' ;
         // }
         elseif(empty($descript_reservation)){ 
-            echo "vous avez oublier de remplir la brève description !"; 
+            echo "vous avez oublier de remplir la brève description !";  
         }else{
             // insert the data of trip reservation
-            $datares = insert_trip_reservation($user_id_voyageur, $user_id_client, $trip_id, $nb_kg_bag,$prixTotBag,$prixTotDoc,$descript_reservation);  
+            $datares = insert_trip_reservation($user_id_voyageur, $user_id_client, $trip_id, $nb_kg_bag,$prixTotBag,$descript_reservation);  
 
             if($datares){
                 //update bagage disponible pour prochains client

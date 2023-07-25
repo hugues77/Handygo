@@ -64,16 +64,16 @@ if(!isset($_SESSION['unique_id'])){
 
                                 <input type="text" name="trip_id" value="<?= ($ref_voy) ?>" hidden>
 
-                                <input type="text" name="bagage_dispo" value="<?= $res['Bagage_dispo'] ?>" hidden>
+                                <input type="text" name="nb_place" value="<?= $res['nb_place'] ?>" hidden>
 
-                                <input type="text" name="bagage_reserver" value="<?= $reslt_bag?>" hidden>
+                                <input type="text" name="place_reserve" value="<?= $reslt_bag?>" hidden>
 
-                                <input type="text" name="courrier_dispo" value="<?= $res['Courrier_dispo'] ?>" hidden>
+                                <!-- <input type="text" name="courrier_dispo" value="<?= $res['Courrier_dispo'] ?>" hidden> -->
 
                                 <div class="wrapper_prix <?= ($prix_bag == 0) ? 'btn-grise' : ''?>">
                                     <span class="minus_bag">-</span>
                                     <input type="text" name="qtyBox_bag_confirm" id="qtyBox_bag" value="0">
-                                    <span class="plus_bag">+</span> 
+                                    <span class="plus_bag">+</span>  
                                 </div> 
                             </div>
                             
@@ -81,7 +81,7 @@ if(!isset($_SESSION['unique_id'])){
                     </div>
                     <hr>
                     <div class="p-total">
-                        <?= ($prix_bag > 0) ? '<p>Prix Total bagage : <b class="p-total-bag">0</b> €</p>' : '' ?>
+                        <?= ($prix_bag > 0) ? '<p>Prix Total place(s) : <b class="p-total-bag">0</b> €</p>' : '' ?>
                     </div>
                     <div class="description-res">
                         <label for="description-res">Indiquez une brève description pour votre réservation</label>

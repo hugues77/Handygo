@@ -97,7 +97,7 @@ require_once "layout/partials/section_start.php";
                                         </form>
                                     </div>
                                     <?php
-                                }
+                                } 
                             }
                             
                         }elseif(!empty($_GET['depart']) AND !empty($_GET['arrivee']) AND !empty($_GET['choisir_dep'])){
@@ -107,7 +107,7 @@ require_once "layout/partials/section_start.php";
                                 if($req->rowCount() > 0){
                                     require_once "layout/partials/annonces-card.php";
                                    
-                                }else{
+                                }else{ 
                                     ?>
                                     <div class="annonce_alert">
                                         <div class="title-alert">Aucune publication disponible pour ce trajet. Merci de révenir plus tard ou créer une alerte</div>

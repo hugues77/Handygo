@@ -14,6 +14,7 @@ if(isset($_SESSION['unique_id'])){
         if(!empty($prix_pl)){
 
             update_trip_prix($prix_pl, $ref_voy, $user_id);
+            update_paiement($ref_voy, $user_id);
             echo 'success';
         }else{
             echo "veuillez remplir tous les champs requis !";

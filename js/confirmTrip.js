@@ -61,43 +61,43 @@ plusBag.addEventListener("click", ()=>{
 
 });
 
-plusCr.addEventListener("click", ()=>{
+// plusCr.addEventListener("click", ()=>{
 
-    numCr.value = parseInt(numCr.value) + 1;
-    numCr.value = (numCr.value < 10) ? "0"+numCr.value : numCr.value;
+//     numCr.value = parseInt(numCr.value) + 1;
+//     numCr.value = (numCr.value < 10) ? "0"+numCr.value : numCr.value;
 
-    if(numCr.value > 0){
-        // alert('zoba zoba');
-        //traitement pour enregistrer le nbre de kg choisie
+//     if(numCr.value > 0){
+//         // alert('zoba zoba');
+//         //traitement pour enregistrer le nbre de kg choisie
         
-        //let's start Ajax
-        let xhr = new XMLHttpRequest();
-        xhr.open("POST", "../ajax/confirmReservation/courrier.php", true);
-        xhr.onload = () =>{
-            if(xhr.readyState === XMLHttpRequest.DONE){
-                if(xhr.status === 200){
-                    let data = xhr.response;
-                    getvalDoc.innerHTML = data;  
+//         //let's start Ajax
+//         let xhr = new XMLHttpRequest();
+//         xhr.open("POST", "../ajax/confirmReservation/courrier.php", true);
+//         xhr.onload = () =>{
+//             if(xhr.readyState === XMLHttpRequest.DONE){
+//                 if(xhr.status === 200){
+//                     let data = xhr.response;
+//                     getvalDoc.innerHTML = data;  
 
-                    // console.log(data);
-                    // if(data == "success"){
-                    //     //signaler que user is saving with success
-                    //     confirm("super !");
-                    //     // window.location="/abonnes";  
-                    // }else{
-                    //     // errorNaissance.textContent = data;
-                    //     // errorNaissance.style.display = "block";
-                    // }
-                }
-            }
-        }
-        //we have to send the form data through ajax to php
-        let formData = new FormData(formConfirm);//creating new formdata object
-        xhr.send(formData); //sending the form data to php
+//                     // console.log(data);
+//                     // if(data == "success"){
+//                     //     //signaler que user is saving with success
+//                     //     confirm("super !");
+//                     //     // window.location="/abonnes";  
+//                     // }else{
+//                     //     // errorNaissance.textContent = data;
+//                     //     // errorNaissance.style.display = "block";
+//                     // }
+//                 }
+//             }
+//         }
+//         //we have to send the form data through ajax to php
+//         let formData = new FormData(formConfirm);//creating new formdata object
+//         xhr.send(formData); //sending the form data to php
        
-    }
+//     }
 
-});
+// });
 
 minusBag.addEventListener("click", ()=>{
     if(numBag.value > 0){
@@ -133,40 +133,40 @@ minusBag.addEventListener("click", ()=>{
     }
   });
 
-minusCr.addEventListener("click", ()=>{
+// minusCr.addEventListener("click", ()=>{
     
-    if(numCr.value > 0){
-        numCr.value = parseInt(numCr.value) - 1;
-        numCr.value = (numCr.value < 10) ? "0"+ numCr.value : numCr.value;
+//     if(numCr.value > 0){
+//         numCr.value = parseInt(numCr.value) - 1;
+//         numCr.value = (numCr.value < 10) ? "0"+ numCr.value : numCr.value;
 
-        //traitement pour choisir / plus ou moins le nbre de document choisi
+//         //traitement pour choisir / plus ou moins le nbre de document choisi
         
-        //let's start Ajax
-        let xhr = new XMLHttpRequest();
-        xhr.open("POST", "../ajax/confirmReservation/courrier.php", true);
-        xhr.onload = () =>{
-            if(xhr.readyState === XMLHttpRequest.DONE){
-                if(xhr.status === 200){
-                    let data = xhr.response;
-                    getvalDoc.innerHTML = data;  
+//         //let's start Ajax
+//         let xhr = new XMLHttpRequest();
+//         xhr.open("POST", "../ajax/confirmReservation/courrier.php", true);
+//         xhr.onload = () =>{
+//             if(xhr.readyState === XMLHttpRequest.DONE){
+//                 if(xhr.status === 200){
+//                     let data = xhr.response;
+//                     getvalDoc.innerHTML = data;  
 
-                    // console.log(data);
-                    // if(data == "success"){
-                    //     //signaler que user is saving with success
-                    //     confirm("super !");
-                    //     // window.location="/abonnes";  
-                    // }else{
-                    //     // errorNaissance.textContent = data;
-                    //     // errorNaissance.style.display = "block";
-                    // }
-                }
-            }
-        }
-        //we have to send the form data through ajax to php
-        let formData = new FormData(formConfirm);//creating new formdata object
-        xhr.send(formData); //sending the form data to php
-    }
-});
+//                     // console.log(data);
+//                     // if(data == "success"){
+//                     //     //signaler que user is saving with success
+//                     //     confirm("super !");
+//                     //     // window.location="/abonnes";  
+//                     // }else{
+//                     //     // errorNaissance.textContent = data;
+//                     //     // errorNaissance.style.display = "block";
+//                     // }
+//                 }
+//             }
+//         }
+//         //we have to send the form data through ajax to php
+//         let formData = new FormData(formConfirm);//creating new formdata object
+//         xhr.send(formData); //sending the form data to php
+//     }
+// });
 
 //traitement reservation trajets
 BtnReserver.addEventListener("click", ()=>{

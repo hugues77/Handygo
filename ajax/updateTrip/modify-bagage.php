@@ -6,15 +6,16 @@ if(isset($_SESSION['unique_id'])){
     $user_id = $_SESSION['unique_id'];
     $ref_voy = htmlentities(trim($_POST['ref_voy_upd']));
     
-    $bagage = htmlentities(trim($_POST['bagage_mod']));
+    $place = htmlentities(trim($_POST['place_mod']));
+    $place_reserve = htmlentities(trim($_POST['place_reserve']));
 
     
-    if(!empty($bagage)){
-        if($bagage_reserve >= $bagage){
+    if(!empty($place)){
+        if($place_reserve >= $place){
             echo "Places disponible ne doit pas être inférieur au place déjà réservés par des clients !";
         }else{
             //Update the data of trip for bagage part
-            update_trip_place($bagage, $ref_voy, $user_id);
+            update_trip_place($place, $ref_voy, $user_id);
             echo 'success';
         }
 

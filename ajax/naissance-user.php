@@ -11,6 +11,8 @@ $image_file = $_FILES['image-file']['name'];
 $year = date("Y");
 $naissance_year = date("Y", strtotime($naissance));
 
+//creer chaque dossier pour user create of the folder for each users
+$directory = mkdir("../images/users/".$user_time);
 
 if(!empty($naissance)){
     //calculate the age
@@ -28,19 +30,30 @@ if(!empty($naissance)){
             $extensions = ['.png','.jpg','.jpeg','.PNG','.JPG','.JPEG'];
             $extension = strchr($image_file,'.');
 
-            if($image_size < 2000000){
-                if(in_array($extension, $extensions)){
-                    $image_new = $user_time.$extension;
-                    $path = "../images/users/".$image_new;
+            if($image_size < 2000000){  
+                if(in_array($extension, $extensions)){ 
+                    $image_new = $_SESSION['nom'].'_'.$user_time.$extension;
 
-                    //deplacement du fichier dans le dossier
-                    $ismove_image = move_uploaded_file($image_tmp, $path);
-                    if($ismove_image){
-                        naissance_user_image($naissance, $image_new, $user_id);
-                        echo 'success';
+                    if($directory == true){
+                        //chemin vers l'image user
+                        $path = "../images/users/".$user_time.'/'.$image_new;
+
+                        //deplacement du fichier dans le dossier
+                        $ismove_image = move_uploaded_file($image_tmp, $path);
+                        if($ismove_image){
+                            profil_user_image($naissance, $image_new, $user_id);
+                            //create session image
+                            $_SESSION['image'] = $image_new; 
+
+                            // update naissance in db
+                            echo 'success';  
+                        }else{
+                            echo "Un problème est survenu lors du telechargement !";
+                        }
+
                     }else{
-                        echo "Un problème est survenu lors du telechargement !";
-                    }
+                        echo 'Impossible de creer un dossier utilisateur; réessayer';
+                    }      
     
                 }else{
                     echo "L'image sélectionnée doit etre en format: - jpg, - png, - jpeg !";
@@ -64,6 +77,3 @@ if(!empty($naissance)){
 }else{
     echo "Le champ date de naisance est requis !";
 }
-
-
-?>

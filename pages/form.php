@@ -32,6 +32,8 @@ require_once "layout/partials/topbar-2.php"; ?>
                     <div class="slide-tab"></div>
                 </div>
                 <div class="formulaire-inner">
+
+                    <!-- formulaire pour login / connexion -->
                     <form  class="login">
                         <div class="field">
                             <input type="email" name="email_login" id="" placeholder="Adresse e-mail" required >
@@ -46,6 +48,8 @@ require_once "layout/partials/topbar-2.php"; ?>
                         </div>
                         <div class="signup-link">Vous n’avez pas de compte ?<a href="#"> Inscrivez-vous Maintenant</a></div>
                     </form>
+
+                    <!-- formulaire pour inscription -->
                     <form  class="signup"> 
                         <div class="field">
                             <input type="email" name="email_register" id="" placeholder="Adresse e-mail" required>
@@ -65,6 +69,8 @@ require_once "layout/partials/topbar-2.php"; ?>
                         </div>
                         <div class="login-link">Vous avez un compte ?<a href="#"> Connectez-vous Maintenant</a></div>
                     </form>
+
+                    <!-- formulaire pour forgot password -->
                     <form  class="password">
                         <div class="field">
                             <input type="email" name="" id="" placeholder="Adresse e-mail" required>

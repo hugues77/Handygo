@@ -557,3 +557,7 @@ setInterval(()=>{
 }, 500); //this function will frequently after 500ms
 
 
+//input validation phone flags
+// const input_tel_confirm = document.querySelector("#phone-confirm-flag");
+// window.intlTelInput(input_tel_confirm,{});
+

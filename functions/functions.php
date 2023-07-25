@@ -61,7 +61,7 @@ if(!function_exists('show_trip')){
     function show_trip(){
         global $connexion;
  
-        $sql = "SELECT * FROM users, trip WHERE users.unique_id = trip.user_id AND date_depart >= CURDATE() ORDER BY id_voy DESC";
+        $sql = "SELECT * FROM users, trip WHERE users.unique_id = trip.user_id AND date_depart = CURDATE() ORDER BY id_voy DESC";
         $req = $connexion->query($sql);
 
         // $trip = $req->fetchAll(PDO::FETCH_OBJ);
@@ -208,5 +208,52 @@ if(!function_exists('details_modify_trip')){
 
         // $req = $req->fetchAll(PDO::FETCH_OBJ);
         return $req;
+    }
+}
+
+
+
+//Css Provenant du social network
+
+//function pour les messages d'alerts
+if (!function_exists('set_flash')) {
+    # function pour les messages alerts et le type c-a-d class CSS
+    function set_flash($message, $type = 'info'){
+        $_SESSION['notification']['message'] = $message;  
+        $_SESSION['notification']['type'] = $type;
+    }
+} 
+
+//function pour gerer l'etat actif de nos lien de navigation
+if(!function_exists('set_active')){
+    function set_active($file, $class='active'){
+        $page = array_pop(explode('/',$_SERVER['SCRIPT_NAME']));
+        //array_pop, renvoie le dernier occurence de la chaine,c'est= à strrchr
+        if($page == $file.'.php'){
+            return $class;
+        }else{
+            return '';
+        }
+    }
+}
+
+//function pour rediriger les pages
+if(!function_exists('redirect')){
+    function redirect($page){
+        header('Location:' .$page);
+        exit();
+    }
+}
+
+//function pour rediriger vers la page demander après connexion
+if(!function_exists('redirect_intent_or')){
+    function redirect_intent_or($default_url){
+        if($_SESSION['forwarding_url']){
+            $url = $_SESSION['forwarding_url']; 
+        }else{
+            $url = $default_url;
+        }
+        $_SESSION['forwarding_url'] = null;
+        redirect($url);
     }
 }

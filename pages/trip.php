@@ -48,10 +48,7 @@ if(!$res){
                     <hr>
                     <div class="prix">
                         <div class="courrier">
-                            <?=$res['Prix_bag'] ? "<p>Prix total pour 1 Kilo : ". $res['Prix_bag']." €</p>" : ''?>
-                        </div>
-                        <div class="colis">
-                             <?=$res['Prix_courrier'] ? "<p>Prix total pour 1 Courrier : ". $res['Prix_courrier']." €</p>" : ''?> 
+                            <?=$res['Prix_bag'] ? "<p>Prix total pour 1 Place : ". $res['Prix_bag']." CDF</p>" : ''?>
                         </div>
                     </div>
                     <hr>

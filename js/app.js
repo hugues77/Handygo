@@ -13,3 +13,9 @@ toggle.onclick = function () {
 // };
 
 
+//Update Photo de profil users  - Abonnes
+// document.getElementById("user-profil").onchange = function(){
+//   document.getElementById('form-user-profil').submit();
+// }
+
+

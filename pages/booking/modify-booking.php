@@ -57,11 +57,11 @@ $reslt = total_bagage_reservation($ref_voy);
 
                         <input type="text" name="user_id_voyageur" value="<?= $user_id_voyageur ?>" hidden>
 
-                        <input type="text" name="trip_id_upd" value="<?= ($ref_voy) ?>" hidden>
+                        <input type="text" name="trip_id_upd" value="<?= ($ref_voy) ?>" hidden> 
 
                         <input type="text" name="bagage_reserver_upd" value="<?= $reslt['nbre_bag'] ?>" hidden>
-                        <input type="text" name="bagage_dispo_upd" value="<?= $rep['Bagage_dispo'] ?>" hidden>
-                        <input type="text" name="courrier_dispo_upd" value="<?= $rep['Courrier_dispo'] ?>" hidden>
+                        <input type="text" name="bagage_dispo_upd" value="<?= $rep['nb_place'] ?>" hidden>
+                        
 
                         <input type="text" name="b_reserver_initial" value="<?= $nb_bag?>" hidden>
                         

@@ -45,6 +45,14 @@ $router->map('GET|POST','/informations/avatar','informations/avatar');
 $router->map('GET|POST','/informations/naissance','informations/naissance');
 $router->map('GET|POST','/informations/name','informations/name');
 $router->map('GET|POST','/informations/telephone','informations/telephone');
+$router->map('GET|POST','/informations/forgot_password','informations/forgot_password');
+
+$router->map('GET|POST','/abonnes/help','partials_members/help');
+$router->map('GET|POST','/abonnes/profil','partials_members/profil');
+$router->map('GET|POST','/abonnes/setting','partials_members/setting');
+$router->map('GET|POST','/abonnes/trajets','partials_members/trajet');
+
+
 $router->map('GET|POST','/messages/chat/[i:user_id]','messages/chat','chat');
 $router->map('GET|POST','/booking/[*:slug]/[i:id]','/booking/article');
 

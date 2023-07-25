@@ -11,10 +11,10 @@ if(isset($_SESSION['unique_id'])){
     $b_reserver = htmlentities(trim($_POST['bagage_reserver_upd']));
     $bagage_dispo = htmlentities(trim($_POST['bagage_dispo_upd'])); 
 
-    $courrier_dispo = htmlentities(trim($_POST['courrier_dispo_upd']));
+    // $courrier_dispo = htmlentities(trim($_POST['courrier_dispo_upd']));
 
     $nb_kg_bag = htmlentities(trim($_POST['qtyBox_bag_upd']));
-    $nb_courr = htmlentities(trim($_POST['qtyBox_cr_upd']));
+    // $nb_courr = htmlentities(trim($_POST['qtyBox_cr_upd']));
 
     $nb_bag_initial= htmlentities(trim($_POST['b_reserver_initial']));
 
@@ -33,7 +33,7 @@ if(isset($_SESSION['unique_id'])){
     $pd_reserver = $b_reserver + $nb_kg_bag;
   
     
-    if(($nb_kg_bag == 0) AND ($nb_courr == 0)){
+    if($nb_kg_bag == 0){
         echo 'Merci de choisir le poids du colis ou le nombre de documents à envoyer';
 
     }elseif($nb_kg_bag > $bag_pret){

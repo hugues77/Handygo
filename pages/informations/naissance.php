@@ -6,7 +6,7 @@ $title = "Bienvenue au PECEP, Amusez-vous bien !";
 //menu - Navbar
 require_once "layout/partials/topbar-2.php";
 
-//ma date d'anniversaire (date de naissance)
+//ma date d'anniversaire (date de naissance) 
 
 ?>
 <section class="list"> 
@@ -14,7 +14,7 @@ require_once "layout/partials/topbar-2.php";
         <h2 class="list-title">Votre Date d'anniversaire, nous est tellement précieuse; C'est parti !</h2> 
         <div class="list-content">
             <div class="col-list1"></div>
-            <div class="col-list2">
+            <div class="col-list2"> 
                 <hr>
                 <div class="formulaire-info">
                     <form  class="naissance" enctype="multipart/form-data">

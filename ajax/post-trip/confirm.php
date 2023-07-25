@@ -19,6 +19,7 @@ if(isset($_SESSION['unique_id'])){
             update_trip_confirm($tel_user, $_SESSION['unique_id']);
             update_trip_confirm_d($descrip_trajet, $_SESSION['unique_id'], $_SESSION['ref']);
             echo 'success';
+            set_flash("Trajet a été bien enregistré et publier");
         }else{
             echo "veuillez remplir tous les champs requis !";
         }

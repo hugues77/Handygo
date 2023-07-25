@@ -53,7 +53,7 @@ if (isset($_SESSION['unique_id'])) {
                         <div class="time">Step 3</div>
                         <div class="content">
                             <h2 class="title">Nombres de places Souhaités</h2>
-                            <p>Je dipose pour mes clients <?= $row['Bagage_dispo'] ?> places</p>
+                            <p>Je dipose pour mes clients <b><?= $row['nb_place'] ?></b> places</p>
                             
                         </div>
                     </div>
@@ -66,7 +66,7 @@ if (isset($_SESSION['unique_id'])) {
                             <h2 class="title">Prix proposé</h2>
                             <p>Je vous propose <?= $row['Prix_bag'] ?> CDF / place </p>
                         </div>
-                    </div>';
+                    </div>
                 <?php endif;
 
                 if ($row['confirm_title'] == 1) : ?>

@@ -22,7 +22,7 @@ require_once 'function.php';
             }else{
                 $password = sha1($password_register);
                 //Here, we save user in the database
-                $confirm_insert = register_user($email_register,$password,$random_id,$status);
+                $confirm_insert = register_user($email_register,$password,$random_id,$time,$status);
                 if($confirm_insert){
                     //select user for creating the sessions
                     $_SESSION['unique_id'] = $random_id;

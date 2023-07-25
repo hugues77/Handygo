@@ -19,10 +19,23 @@ if (isset($_SESSION["unique_id"])) {
             <li><a href="/post-trip">Déposer Un trajet</a></li>
             <li><a href="/annonces">Trouver Une Offre</a></li>
             <li><a href="/reclammation">Réclammation</a></li>
-            <li><?= !isset($_SESSION['unique_id']) ? '<a class="connexion_btn" href="/form">Connexion | Inscription</a>' : '<a class="connexion_btn" href="/abonnes"><img src="../images/users/' . $row['Image'] . '" alt=""> Mon Espace Abonné</a>' ?></li>
+            <li>
+                <?php if(!isset($_SESSION['unique_id']) AND !isset($_SESSION['image'])): ?>
+                    <a class="connexion_btn" href="/form">Connexion | Inscription</a>
+                <?php elseif(isset($_SESSION['unique_id']) AND ($row['Image'] == 'image.png')): ?>
+                    <a class="connexion_btn" href="/abonnes"><img src="../images/users/image.png" alt="'.$row['Prenom'].'"> Mon Espace Abonné</a>
+                <?php elseif(isset($_SESSION['unique_id']) AND isset($_SESSION['image'])): ?>
+                    <a class="connexion_btn" href="/abonnes"><img src="../images/users/<?= $row['User_time'].'/' . $row['Image']  ?>" alt="<?=$row['Prenom'] ?>"> Mon Espace Abonné</a>
+                <?php endif; ?>
+                
+            </li>
         </ul>
         <div class="menu-btn">
             <i class="fas fa-bars"></i>
         </div>
     </div>
 </nav>
+
+
+
+

@@ -26,7 +26,7 @@ $(document).ready(function () {
 
   // script typing animation
   var typed = new Typed(".typing", {
-    strings:["HandyGo c'est parti !","Inscrivez-vous","Créer un compte","Déposer votre trajet","Trouvez un trajet","Payer direct en Especès","Fixer un RDV","Et voilà, c'est tout !"],
+    strings:["HandyGo c'est parti !","Inscrivez-vous","Connectez-vous","Déposer votre trajet","Trouvez un trajet","Payer direct en Especès","Fixer un RDV","Et voilà, c'est tout !"],
     typeSpeed:100,
     backSpeed:100,
     loop:true
