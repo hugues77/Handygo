@@ -1,20 +1,13 @@
 <div class="sidebar">
     <ul>
         <li>
-
-            <form enctype="multipart/form-data" method="$_POST" id="form-user-profil">
-
-                <a href="#" class="chat">
-                    <span class="icon"><?= $row['Image'] != 'image.png' ? '<img src="../images/users/' . $row['User_time'] . '/' . $row['Image'] . ' " alt=" ' . $row['Prenom'] . ' ">' : '<img src="../images/users/image.png" alt="' . $row['Prenom'] . '">' ?></span>
-                    <span class="title">
-                        <h3><?= $row['Prenom'] . "  " . $row['Nom'] ?></h3>
-                    </span>
-                </a>
-                <div class="round-profil">
-                    <input type="file" name="user_profil" id="user-profil" accept=".png, .jpg, .jpeg">
-                    <i class="fa fa-camera"></i>
-                </div>
-            </form>
+            <a href="/abonnes" class="chat">
+                <span class="icon"><?= $row['Image'] != 'image.png' ? '<img src="../images/users/' . $row['User_time'] . '/' . $row['Image'] . ' " alt=" ' . $row['Prenom'] . ' ">' : '<img src="../images/users/image.png" alt="' . $row['Prenom'] . '">' ?></span>
+                <span class="title">
+                    <h3><?= $row['Prenom'] . "  " . $row['Nom'] ?></h3>
+                </span>
+                <small class="expert">Débutant</small>
+            </a>
 
         </li>
         <li>

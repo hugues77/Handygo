@@ -46,6 +46,8 @@ $router->map('GET|POST','/informations/naissance','informations/naissance');
 $router->map('GET|POST','/informations/name','informations/name');
 $router->map('GET|POST','/informations/telephone','informations/telephone');
 $router->map('GET|POST','/informations/forgot_password','informations/forgot_password');
+$router->map('GET|POST','/informations/complete_user','informations/complete_user');
+$router->map('GET|POST','/informations/information_user','informations/information_user');
 
 $router->map('GET|POST','/abonnes/help','partials_members/help');
 $router->map('GET|POST','/abonnes/profil','partials_members/profil');

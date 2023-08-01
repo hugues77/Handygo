@@ -28,13 +28,13 @@ require_once "layout/partials/topbar-2.php";
                                         <header>
                                             <?php
                                             //query for select the news for user
-                                            $chat = user_chat($_SESSION["unique_id"]);
-                                            if ($chat->rowCount() > 0) {
-                                                $row = $chat->fetch(PDO::FETCH_ASSOC);
-                                            }
-                                            ?>
+                                            // $chat = user_chat($_SESSION["unique_id"]);
+                                            // if ($chat->rowCount() > 0) {
+                                            //     $row = $chat->fetch(PDO::FETCH_ASSOC);
+                                            // }
+                                            ?> 
                                             <div class="content-list">
-                                                <img src="../images/users/<?= $row['Image'] ?>" alt="">
+                                                <?= $row['Image'] != 'image.png' ? '<img src="../images/users/' . $row['User_time'] . '/' . $row['Image'] . ' " alt=" ' . $row['Prenom'] . ' ">' : '<img src="../images/users/image.png" alt="' . $row['Prenom'] . '">' ?>
                                                 <div class="details-list">
                                                     <span><?= $row['Prenom'] . " " . $row['Nom'] ?></span>
                                                     <p><?= $row['Statut'] ?></p>
@@ -49,7 +49,7 @@ require_once "layout/partials/topbar-2.php";
                                         </div>
                                         <div class="error-text"></div>
 
-                                        <div class="users-list-item">
+                                        <div class="users-list-item"> 
 
                                         </div>
                                     </div>

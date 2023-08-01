@@ -57,6 +57,23 @@ CREATE TABLE  `reservation` (
   PRIMARY KEY(`ID_res`)
 ) ENGINE=MYISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+
+-- --------------------------------------------------------
+--
+--
+-- Table structure for table `trip`
+--
+
+CREATE TABLE  `comment` (
+  `ID_com` int NOT NULL AUTO_INCREMENT,
+  `user_ID` int NOT NULL,
+  `titre_com` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Date_com` timestamp DEFAULT CURRENT_TIMESTAMP NOT NULL,
+  `Description_com` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `posted` int DEFAULT 0,
+  PRIMARY KEY(`ID_com`)
+) ENGINE=MYISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 -- --------------------------------------------------------
 --
 -- Table structure for table `reservation`

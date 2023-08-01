@@ -5,7 +5,7 @@ if(!isset($_SESSION['unique_id'])){
 }elseif($_SESSION['unique_id'] == $params['user_id']){
     header("Location:/abonnes");
 }
-$title = "Partager vos Kilos avec vos proches";
+$title = "Partager vos trajets avec vos proches";
 //menu - Navbar
 require_once "layout/partials/topbar-2.php";
 
@@ -28,8 +28,9 @@ require_once "layout/partials/topbar-2.php";
                         ?>
                         <div class="content-chat">
                             <a href="/messages/list" class="back-icon"><i class="fas fa-arrow-left"></i></a>
-                            <img src="../../images/users/<?=$row['Image'] ?>" alt="">
-                            <div class="details-chat">
+                            <?= $row['Image'] != 'image.png' ? '<img src="../images/users/' . $row['User_time'] . '/' . $row['Image'] . ' " alt=" ' . $row['Prenom'] . ' ">' : '<img src="../images/users/image.png" alt="' . $row['Prenom'] . '">' ?>
+                             
+                            <div class="details-chat"> 
                                 <span><?=$row['Prenom']." ".$row['Nom'] ?></span>
                                 <p><?=$row['Statut']?></p>
                             </div>

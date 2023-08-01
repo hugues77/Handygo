@@ -195,6 +195,7 @@ html {
   background: crimson;
 }
 
+
 /* all similar content styling code */
 section {
   padding: 100px 0;
@@ -707,6 +708,119 @@ section .title::after {
 .owl-dot:hover {
   background: crimson !important;
 }
+.teams .btn-temoignage{
+  text-align: center;
+  margin-top: 30px;
+  margin-left: 370px;
+  margin-right: 370px;
+  border: 1px solid crimson;
+  padding: 10px 22px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  /* font-size: 20px; */
+  font-weight: 400;
+  border-radius: 10px;
+}
+
+.teams .btn-temoignage:hover{
+  background: crimson;
+  color: #fff;
+}
+
+.teams .modal-box{
+  z-index: 9999;
+  max-width: 600px;
+  width: 100%;
+  background: #fff;
+  border-radius: 20px;
+  color: #222;
+  position: absolute;
+  left: 50%;
+  /* top: 50%; */
+  padding: 30px 20px;
+  transform: translate(-50%, -50%) scale(1.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+.teams .modal-box i{
+  font-size: 50px;
+  color: crimson;
+}
+.teams .modal-box h2{
+  margin-top: 15px;
+  font-size: 25px;
+  font-weight: 500;
+}
+.teams .modal-box h4{
+  font-size: 18px;
+  font-weight: 400;
+}
+.teams .modal-box form input,
+.teams .modal-box form textarea{
+  width: 100%;
+  margin-top: 12px;
+  height: 100%;
+  border: 1px solid darkgray;
+  border-radius: 6px;
+  outline: none;
+  padding: 0 15px;
+  font-size: 17px;
+  font-family: "Popins", sans-serif;
+}
+.teams .modal-box form input{
+  height: 35px;
+
+}
+.teams .modal-box form textarea{
+height: 80px;
+resize: none;
+padding-top: 10px;
+}
+
+.teams .modal-box .buttons{
+  display: flex;
+  margin-top: 25px;
+}
+.teams .modal-box .buttons div{
+  background: #005b8f;
+  color: #fff;
+  padding: 6px 60px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+  border: 2px solid #005b8f;
+}
+.teams .modal-box .buttons div.btn-fermer{
+  background: none;
+  color: #005b8f;
+  margin-right: 20px;
+  
+}
+.teams .modal-box .buttons div.btn-fermer:hover{
+  color: #fff;
+  background: #005b8f;
+  transition: 0.3s ease;
+}
+.teams .modal-box .buttons div.btn-envoyer:hover{
+  transition: 0.3s ease;
+background: #048ad7;
+}
+
+.teams.active .btn-temoignage{
+  display: none;
+}
+.teams.active .modal-box{
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+
 
 /* faq section styling */
 .faq {
@@ -1173,7 +1287,7 @@ button.btn-login {
 .topbar-3{
   padding-top: 4%;
   background: #fff; 
-  min-height: 100vh;
+  height: 150vh;
   /* width: 100%; */
 }
 .topbar-3 .sidebar{
@@ -1196,7 +1310,7 @@ button.btn-login {
 }
 .topbar-3 .sidebar .toggle{
   position: absolute;
-  bottom: 35px;
+  bottom: 23px;
   right: 15px;
   width: 50px;
   height: 50px;
@@ -1251,7 +1365,7 @@ button.btn-login {
 }
 .topbar-3 .sidebar ul li:nth-child(1){
   top: 20px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   background: none;
   /* pointer-events: none; */
 }
@@ -1260,29 +1374,30 @@ button.btn-login {
   height:70px;
   border: 2px solid #fff;
 }
-.topbar-3 .sidebar ul li:nth-child(1) .round-profil{
+.topbar-3 .round-profil{
   position: absolute;
-  bottom: -10px;
-  right: 220px;
-  background: crimson;
-  width: 25px;
-  height: 25px;
+  /* bottom: 145px;
+  right: 450px; */
+  background: #04befe;
+  width: 35px;
+  height: 35px;
   text-align: center;
-  line-height: 25px;
+  line-height: 35px;
   border-radius: 50%;
   overflow: hidden;
+  margin: -60px 0px 0px 340px ;
 }
-.topbar-3 .sidebar ul li:nth-child(1) .round-profil input[type='file']{
+.topbar-3 .round-profil input[type='file']{
   position: absolute;
   transform: scale(2);
   opacity: 0;
 }
-.topbar-3 .sidebar ul li:nth-child(1) .round-profil input[type='file']::-webkit-file-upload-button{
+.topbar-3 .round-profil input[type='file']::-webkit-file-upload-button{
   cursor: pointer;
 }
-.topbar-3 .sidebar ul li:nth-child(1) i{
+.topbar-3 .round-profil i{
   color: #fff;
-  font-size: 12px;
+  font-size: 18px;
 }
 .topbar-3 .sidebar ul li:nth-child(1) h3{
   text-transform: capitalize;
@@ -1307,7 +1422,7 @@ button.btn-login {
   text-align: center;
 }
 .topbar-3 .sidebar ul li a .icon ion-icon,
-.topbar-3 .sidebar ul li a .icon i{
+.topbar-3 .sidebar ul li a .icon i{  
   font-size: 1.75em;
 }
 .topbar-3 .sidebar ul li a .title{
@@ -1319,23 +1434,34 @@ button.btn-login {
   text-align: start;
   white-space: nowrap;
 }
+.topbar-3 .sidebar ul li a small.expert{
+  position: relative;
+  line-height: 95px;
+  right: 100px;
+  margin-top: 2px;
+}
 
 /* home_content */
-.topbar-3 .home_content{
+.topbar-3 .home_content{ 
   position: absolute;
   width: calc(100% - 300px);
   left: 300px;
-  /* min-height: 20vh; */
+  /* min-height: 100vh; */
   background: #fff;
   transition: 0.5s ease;
   display: grid;
   /* place-items: center; */
   padding-left: 20px;
 }
+
 .topbar-3 .home_content.active{
   width: calc(100% - 80px);
   left: 80px;
-}
+} 
+.topbar-3 .home_content .round-profil.active{
+  /* bottom: 145px; */
+  right: 560px;
+} 
 
 /* Css style for topbar - 3, Espace Abonnes */
 .topbar-3 .home_content h2.title-heading{
@@ -1438,6 +1564,141 @@ button.btn-login {
   color: #fff;
 }
 
+/* topbar-3 - profil */
+
+.topbar-3 .home_content .identite{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  margin-top: 20px;
+  font-size: 18px;
+  /* color: #04befe; */
+}
+.topbar-3 .home_content .identite .name{
+  text-transform: capitalize;
+}
+.topbar-3 .home_content .identite .name i,
+.topbar-3 .home_content .identite .mel i{
+  margin-right: 10px;
+  color: #04befe;
+}
+.topbar-3 .home_content hr.line-profil{
+  margin-top: 8px;
+}
+.topbar-3 .home_content .user-bio p{
+  margin-top: 18px;
+  /* background: #acacac; */
+  /* padding: 10px;
+  border-radius: 5px; */
+  margin-right: 10px;
+  font-size: 18px;
+}
+.topbar-3 .home_content .identite .vehicule span i,
+.topbar-3 .home_content .identite .pieces span i{
+  color: crimson;
+  margin-right: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+.topbar-3 .home_content .user-bio i{
+  margin-right: 5px;
+}
+
+
+.topbar-3 .home_content .mesinfos1,
+.topbar-3 .home_content .mesinfos{
+  margin-top: 10px;
+  background: #04befe;
+  color: #fff;
+  font-size: 18px;
+  padding: 25px;
+  border-radius: 5px;
+  margin-right: 10px;
+  font-weight: bold;
+}
+.topbar-3 .home_content .mesinfos i{
+  color: crimson;
+  font-weight:bold;
+  /* font-size: 30px; */
+  background: #fff;
+  border-radius: 50%;
+  padding: 5px;
+  /* margin-left: 685px; */
+  position: relative;
+  left: 69%;
+}
+.topbar-3 .home_content .mesinfos1 i{
+  color: crimson;
+  font-weight:bold;
+  /* font-size: 30px; */
+  background: #fff;
+  border-radius: 50%;
+  padding: 5px;
+  /* margin-left: 685px; */
+  position: relative;
+  left: 62%;
+}
+.topbar-3 .home_content .mesinfos1 i.active{
+  position: relative;
+  left: 70%;
+
+}
+.topbar-3 .home_content .mesinfos i.active{
+  position: relative;
+  left: 75%;
+
+}
+.topbar-3 .home_content .btn-profil{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  /* display: none; */
+}
+.topbar-3 .home_content .btn-profil .btn-voir{
+  /* display: inline-block; */
+  /* background: #04befe; */
+  color: crimson;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 10px 30px;
+  margin-top: 20px;
+  border-radius: 6px;
+  border: 2px solid #04befe;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.topbar-3 .home_content .btn-profil .btn-pub{
+  /* display: inline-block; */
+  background: crimson;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 10px 30px;
+  margin-top: 20px;
+  border-radius: 6px;
+  border: 2px solid crimson;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.formulaire-info form.complete-user .field-user,
+.formulaire-info form.info-user .field-user{
+  display: flex;
+}
+.formulaire-info form.complete-user .field-user.m-complete{
+  margin-top: -25px;
+}
+.formulaire-info form.complete-user .field-user .m-field,
+.formulaire-info form.info-user .field-user .m-field{
+  margin-right: 10px;
+}
+.formulaire-info form.info-user hr.line-info{
+  margin-top: 10px;
+  border: 2px solid darkgray;
+}
+
+
+
+
 /* topbar-3 - trajets */
 
 .topbar-3 .home_content .trajet-es .trajet-aucun{
@@ -1452,9 +1713,15 @@ button.btn-login {
   font-size: 50px;
   margin-bottom: 20px;
 }
+.topbar-3 .home_content .trajet-es .trajet-non,
+.topbar-3 .home_content .trajet-es .trajet-oui{
+display: grid;
+grid-template-columns: 50% 50%;
+}
+.topbar-3 .home_content .trajet-es .trajet-oui .btn-pub,
 .topbar-3 .home_content .trajet-es .trajet-non .btn-pub{
   text-decoration: none;
-  display: inline-block;
+  /* display: inline-block; */
   /* background: #04befe; */
   color: crimson;
   font-size: 18px;
@@ -1466,9 +1733,9 @@ button.btn-login {
   transition: all 0.3s ease;
   cursor: pointer;
 }
+.topbar-3 .home_content .trajet-es .trajet-oui .btn-voir,
 .topbar-3 .home_content .trajet-es .trajet-non .btn-voir{
   text-decoration: none;
-  display: inline-block;
   background: crimson;
   color: #fff;
   font-size: 18px;
@@ -1479,15 +1746,48 @@ button.btn-login {
   border: 2px solid crimson;
   transition: all 0.3s ease;
   cursor: pointer;
+  margin-right: 10px;
 }
+.topbar-3 .home_content .trajet-es .trajet-oui .btn-pub:hover,
 .topbar-3 .home_content .trajet-es .trajet-non .btn-pub:hover{
   background: #04befe;
   color: #fff;
 }
+.topbar-3 .home_content .trajet-es .trajet-oui .btn-voir:hover,
 .topbar-3 .home_content .trajet-es .trajet-non .btn-voir:hover{
   background: none;
   color: crimson;
 }
+.topbar-3 .home_content .trajet-es .trajet-non,
+.topbar-3 .home_content .trajet-es .trajet-oui{
+  text-align: center;
+}
+.topbar-3 .home_content .trajet-es hr.trj{
+  border: 2px solid #222;
+  margin-top: 12px;
+}
+.topbar-3 .home_content .mesinfos-trajets{
+  margin-top: 10px;
+  background: #04befe;
+  color: #fff;
+  font-size: 18px;
+  padding: 25px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.topbar-3 .home_content .mesinfos-trajets i{
+  color: crimson;
+  font-weight:bold;
+  /* font-size: 30px; */
+  background: #fff;
+  border-radius: 50%;
+  padding: 5px;
+  /* margin-left: 685px; */
+  position: relative;
+  left: 83%;
+}
+
 
 
 /* search bouton start styling */
@@ -1643,13 +1943,19 @@ section .annonces-2 {
 /* page annonces sections styling for differents CARD */
 .annonces-2 .annonces-card .card1 {
   width: 100%;
-  margin-left: 10px;
+  /* margin-left: 10px; */
   background: #222;
   color: #fff;
   border-radius: 6px;
   padding: 5px 15px;
   cursor: pointer;
   margin-bottom: 10px;
+}
+.annonces-2 .annonces-card .m-card1{
+  margin-left: 10px;
+}
+.annonces-2 .m-card2{
+  margin-right: 10px;
 }
 .annonces-2 .annonces-card .grise-card{
   opacity: 0.3;
@@ -2216,6 +2522,9 @@ font-family: "Popins", sans-serif;
   height: 150px;
   width: 150px;
 }
+.user .user-content .col-user2 .user-title{
+  text-transform: capitalize;
+}
 .user .user-content .col-user2 .user-img span {
   background: #222;
   color: #fff;
@@ -2233,8 +2542,14 @@ font-family: "Popins", sans-serif;
   z-index: 0;
 }
 .user .user-content .col-user2 .expert {
-  font-weight: 500;
+  font-weight: 600;
   font-size: 20px;
+  margin-bottom: 10px;
+}
+.user .user-content .col-user2 .user-bio {
+  font-weight: 500;
+  font-size: 15px;
+  text-align: justify;
 }
 .user .user-content .col-user2 .avis {
   display: grid;
@@ -3819,6 +4134,25 @@ font-family: "Popins", sans-serif;
 .formulaire-info form .field.image{
  margin-bottom: 5%;
 }
+.formulaire-info form .field textarea.textarea-complete{
+  width: 100%;
+  margin-top: 12px;
+  height: 80px;
+  border: 1px solid darkgray;
+  border-radius: 6px;
+  outline: none;
+  padding: 0 15px;
+  font-size: 17px;
+  font-family: "Popins", sans-serif;
+}
+.formulaire-info form .field textarea.textarea-complete::placeholder{
+  padding-top: 10px;
+}
+
+.formulaire-info form .button-complete input[type="submit"]{
+  margin-top: 50px;
+}
+
 
 /* Style CSS for page 404 - page not found */
 
@@ -3878,6 +4212,7 @@ font-family: "Popins", sans-serif;
 }
 .error-text{
   color: #721c24;
+  width: 100%;
   background: #f8d7da;
   padding: 8px 10px;
   text-align: center;
@@ -4039,7 +4374,7 @@ font-family: "Popins", sans-serif;
   }
   .about .title {
     /* position: relative; */
-    text-align: left;
+    text-align: left; 
     font-size: 30px;
     font-weight: 500;
     margin-bottom: 10px;

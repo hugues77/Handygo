@@ -6,8 +6,8 @@ $req = $connexion->query($sql);
 $res = $req->rowCount();
 $output = "";
         if($res == 1){
-            $output .="Aucun Utilisateur disponible.";
+            $output .="Aucun Utilisateur disponible."; 
         }elseif($res > 0){
-            require_once 'partials/data.php';
+            require_once 'partials/data.php'; 
         }
     echo $output;

@@ -20,17 +20,31 @@ while($row = $req->fetch(PDO::FETCH_ASSOC)){
 
     //check if user is offline or online
     ($row["Statut"] == "Hors ligne maintenant") ? $offline = "offline" : $offline="";
-    
+    if(($row['Image']) !='image.png'){
     $output .='
     <a href=" '.$router->generate("chat",["user_id" =>$user_id]).' ">
         <div class="content-list">
-            <img src="../images/users/'.$row['Image'].'" alt="">
+            <img src="../images/users/'. $row['User_time'] . '/' . $row['Image'].'" alt=" '. $row['Prenom'].'"> 
             <div class="details-list">
                 <span>'.$row['Prenom'] ." ".$row['Nom'].'</span>
-                <p>'.$msg.'</p> 
+                <p>'.$msg.'</p>    
             </div>
         </div>
         <div class="status-dot '.$offline.'"><i class="fas fa-circle"></i></div>
     </a>
     ';
+    }else{
+        $output .='
+        <a href=" '.$router->generate("chat",["user_id" =>$user_id]).' ">
+            <div class="content-list">
+                <img src="../images/users/image.png"> 
+                <div class="details-list">
+                    <span>'.$row['Prenom'] ." ".$row['Nom'].'</span>
+                    <p>'.$msg.'</p>    
+                </div>
+            </div>
+            <div class="status-dot '.$offline.'"><i class="fas fa-circle"></i></div>
+        </a>
+        ';
+    }
 }

@@ -63,7 +63,7 @@ if(!$res){
                                 <small><i class="fas fa-star"></i>4,4 / 5 - 22 avis</small>
                             </div>
                             <div class="colis auteur">
-                                <img src="../images/users/<?=$res['Image'] ?>" alt="">      
+                            <?= $res['Image'] != 'image.png' ? '<img src="../images/users/' . $res['User_time'] . '/' . $res['Image'] . ' " alt=" ' . $res['Prenom'] . ' ">' : '<img src="../images/users/image.png" alt="' . $res['Prenom'] . '">' ?>     
                             </div>
                         </div>
                     </a>
@@ -119,7 +119,7 @@ if(!$res){
                                 <div class="profil">
                                     <p class="name-user"><?=$resp['prenom'].' '.$resp['nom'] ?> </p>
                                     <div class="user-img">
-                                        <img src="../images/users/<?=$resp['image']?>" alt="<?=$resp['prenom']?>">
+                                    <?= $resp['Image'] != 'image.png' ? '<img src="../images/users/' . $resp['User_time'] . '/' . $resp['Image'] . ' " alt=" ' . $resp['Prenom'] . ' ">' : '<img src="../images/users/image.png" alt="' . $resp['Prenom'] . '">' ?>
                                         <i class="fas fa-chevron-right"></i>
                                     </div>
                                 </div>
@@ -136,7 +136,7 @@ if(!$res){
                             <a href="/booking/book-luggage?<?= ($res['Destination']) ?>=<?=$lagguge?>&ref_voy=<?=($res['Ref_voy'])?>">Continuer</a>
                         </div>
                     <?php else : ?>
-                        <?php if($_SESSION['unique_id'] == $res['Unique_ID'] ): ?>
+                        <?php if($_SESSION['unique_id'] == $res['Unique_ID'] ): ?> 
                             <div class="confirm">
                                 <a href="/booking/modify-trip?<?= ($res['Destination']) ?>=<?=$lagguge?>&ref_voy=<?=($res['Ref_voy'])?>&user_id=<?=$_SESSION['unique_id']?>">Modifier mon trajet</a>
                             </div>

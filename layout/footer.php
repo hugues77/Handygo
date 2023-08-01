@@ -32,6 +32,7 @@
         <script src="../js/script.js"></script>
         <script src="../js/app.js"></script>
         <script src="../js/app-2.js"></script>
+        <script src="../js/modal-temoignage.js"></script>
         <script src="../js/calendar.app.js"></script>
         <script src="../js/app-connexion.user.js"></script>
         <script src="../js/pass-show-hide.js"></script>
@@ -42,6 +43,8 @@
         <script src="../../js/chat.js"></script>
         <script src="../../js/name-user.js"></script>
         <script src="../../js/naissance-user.js"></script>
+        <script src="../../js/profil-user.js"></script>
+        <script src="../../js/complete-user.js"></script>
 
         <script src="../js/post-trip.js"></script>
         <script src="../js/confirmTrip.js"></script>

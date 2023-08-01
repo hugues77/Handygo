@@ -39,5 +39,25 @@
                 </div>
             </div>
         </div>
+        <div class="btn-temoignage"> Laisser un commentaire</div>
+    </div>
+    <!-- content modal / form  -->  
+    <div class="modal-box">
+        <div class="error-text error"></div>
+        <i class="fa-solid fa-pen-to-square"></i>
+        <h2>Laissez-nous un commentaire </h2>
+        <h4>Qu'est ce que vous en pensez sur Handygo ? Exprimez-vous!</h4>
+        <form  method="post" class="teams-modal">
+            <div class="field">
+                <input type="text" name="titre-tem" placeholder="Titre du commentaire">
+            </div>
+            <div class="field">
+                <textarea name="description-tem" id="" cols="30" rows="10" placeholder="Votre commentaire ici"></textarea>
+            </div>
+            <div class="buttons">
+                <div class="btn-fermer">Fermer</div>
+                <div class="btn-envoyer">Envoyer</div>
+            </div>
+        </form>
     </div>
 </section>

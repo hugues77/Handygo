@@ -152,10 +152,10 @@ require_once "layout/partials/topbar-2.php";
                         </div>
 
                         <div class="page confirmation">
-                            <div class="title1"> informations complémentaires</div>
+                            <div class="title1"> Informations complémentaires</div>
                             <div class="field">
-                                <div class="label">confirmer Votre téléphone</div>
-                                <input type="tel" name="tel-user" class="input-5"> 
+                                <div class="label">Confirmer Votre téléphone</div>
+                                <input type="tel" name="tel-user" class="input-5">
                             </div>
                             <div class="descrip-voy">
                                 <div class="label">Description du trajet</div>
@@ -210,7 +210,7 @@ require_once "layout/partials/topbar-2.php";
                     <div class="get-info-1">
                         <div class="head">
                             <div class="title">
-                                <img src="images/users/<?= $row['Image'] ?>" alt="">
+                                <?= $row['Image'] != 'image.png' ? '<img src="../images/users/' . $row['User_time'] . '/' . $row['Image'] . ' " alt=" ' . $row['Prenom'] . ' ">' : '<img src="../images/users/image.png" alt="' . $row['Prenom'] . '">' ?>
                                 <div class="name">
                                     <span><?= $row['Prenom'] . " " . $row['Nom'] ?></span><br>
                                     <span><?= $old ?> Ans (<?= $row['Sexe'] ?>)</span>

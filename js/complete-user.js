@@ -1,15 +1,16 @@
+
 //Button select image for user
-const formNaissance = document.querySelector('.formulaire-info form.naissance');
-const errorNaissance = document.querySelector(".formulaire-info .error-name");
+const formComplete = document.querySelector('.formulaire-info form.complete-user');
+const errorComplete = document.querySelector(".formulaire-info .error-name");
 
 //select file BTn
-const fileUser  = document.querySelector('#file-user');
-const customImage  = document.querySelector('.custom-image');
-const customTxt  = document.querySelector('.custom-text');
+// const fileUser  = document.querySelector('#file-user');
+// const customImage  = document.querySelector('.custom-image');
+// const customTxt  = document.querySelector('.custom-text');
 //btn valider signup
-const BtnNaissance = document.querySelector(".btn-naissance");
+const BtnComplete = document.querySelector(".button-complete .btn-complete");
 
-formNaissance.onsubmit = (e)=>{
+formComplete.onsubmit = (e)=>{
     e.preventDefault(); //preventing form from submiting
 }
 
@@ -25,10 +26,10 @@ fileUser.onchange = () =>{
 }
 
 //traitement
-BtnNaissance.onclick = () =>{
+BtnComplete.onclick = () =>{
     //let's start Ajax
     let xhr = new XMLHttpRequest();
-    xhr.open("POST", "../ajax/naissance-user.php", true);
+    xhr.open("POST", "../ajax/complete.php", true);
     xhr.onload = () =>{
         if(xhr.readyState === XMLHttpRequest.DONE){
             if(xhr.status === 200){
@@ -39,13 +40,13 @@ BtnNaissance.onclick = () =>{
                     // confirm("super !");
                     window.location="/abonnes";  
                 }else{
-                    errorNaissance.textContent = data;
-                    errorNaissance.style.display = "block";
+                    errorComplete.textContent = data;
+                    errorComplete.style.display = "block";
                 }
             }
         }
     }
     //we have to send the form data through ajax to php
-    let formData = new FormData(formNaissance);//creating new formdata object
+    let formData = new FormData(formComplete);//creating new formdata object
     xhr.send(formData); //sending the form data to php
 }   

@@ -413,6 +413,17 @@ if (!function_exists('verify_session_ref')) {
 }
 
 
+//insert into comment in the database
+if (!function_exists('insert_comment')) {
+    function insert_comment($unique_id, $titre, $description)
+    {
+        global $connexion;
+        $sql2 = "INSERT INTO comment (user_id, titre_com, description_com ) VALUES (?,?,?)";
+        $req = $connexion->prepare($sql2);
+        $data_insert = $req->execute(array($unique_id, $titre, $description));
+        return $data_insert;
+    }
+}
 
 
 
