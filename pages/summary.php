@@ -1,5 +1,5 @@
 <?php
-$title = "IPhone 8 Plus de Handy | Tinda Colis";
+$title = "Proposition | Handygo";
 //menu - Navbar
 require_once "layout/partials/topbar-2.php";
 

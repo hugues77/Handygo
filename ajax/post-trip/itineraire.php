@@ -19,21 +19,12 @@ if(isset($_SESSION['unique_id'])){
 // 
 
     if(!empty($depart_voy) && !empty($dest_voy) && !empty($mode)){ 
-        if(isset($_SESSION['ref'])){
-            //update the data of modify trip, itineraire
-            $update = update_itineraire_trip($depart_voy, $arrivee_voy, $mode, $ref_voy, $user_id);
-            // if($update){
-            //     echo 'success';
-            // }else{
-            //     echo 'l\'opération est à refaire '; 
-            // }
-            echo 'success';
-        }else{
-            //insert the data of trip
-            insert_trip($depart_voy, $dest_voy, $mode, $ref_voy_confirm, $user_id);
-            $_SESSION['ref'] = $ref_voy_confirm; //creating session of trip, la detruire après confirmation publication 
-            echo 'success'; 
-        }
+
+        //insert the data of trip
+        insert_trip($depart_voy, $dest_voy, $mode, $ref_voy_confirm, $user_id);
+        $_SESSION['ref'] = $ref_voy_confirm; //creating session of trip, la detruire après confirmation publication    
+        echo 'success'; 
+        
     }else{
         echo "veuillez remplir tous les champs requis !";
     }

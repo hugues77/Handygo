@@ -1,5 +1,6 @@
 <?php
 $title = "Bienvenue au Plateforme en ligne, Amusez-vous bien !";
+
 //menu - Navbar
 require_once "layout/partials/topbar.php"; 
 //section start

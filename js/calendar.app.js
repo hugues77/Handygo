@@ -9,7 +9,7 @@ const picker = MCDatepicker.create({
 	customCancelBTN: 'Annuler',
 	customClearBTN: 'Effacer',
 	customOkBTN: 'Valider',
-	dateFormat: 'dd-mmmm-yyyy',
+	dateFormat: 'dd mmmm yyyy',
     theme: {
         theme_color: '#dc143c',
 		main_background: '#222',
@@ -137,7 +137,7 @@ const picker3 = MCDatepicker.create({
 	customCancelBTN: 'Annuler',
 	customClearBTN: 'Effacer',
 	customOkBTN: 'Valider',
-	dateFormat: 'dd-mmmm-yyyy',
+	dateFormat: 'dd mmmm yyyy',
     theme: {
         theme_color: '#dc143c',
 		main_background: '#222',
@@ -169,4 +169,4 @@ const picker3 = MCDatepicker.create({
         }
 
     }
-});
+}); 

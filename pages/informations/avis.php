@@ -9,11 +9,11 @@ require_once "layout/partials/topbar-2.php";
         <div class="avis-content">
             <div class="col-avis1"></div>
             <div class="col-avis2">
-                <h1>Avis</h1>
+                <h2 class="text-title">Avis</h2>
                 <p class="note-gen">4,4/5</p>
                 <small>24 Avis</small>
                 <hr>
-                <div class="avis">
+                <div class="avis"> 
                     <div class="note">
                         <p>Excellent</p>
                     </div>
@@ -59,7 +59,7 @@ require_once "layout/partials/topbar-2.php";
                         <div class="profil">
                             <p class="name-user">Handy Samuek</p>
                             <div class="user-img">
-                                <img src="images/users/image.jpg" alt="">
+                                <img src="../../images/users/image.png" alt="">
                                 <i class="fas fa-chevron-right"></i>
                             </div>
                         </div>
@@ -74,7 +74,7 @@ require_once "layout/partials/topbar-2.php";
                         <div class="profil">
                             <p class="name-user">Olive Samuek</p>
                             <div class="user-img">
-                                <img src="images/users/hand.jpg" alt="">
+                                <img src="../../images/users/hand.jpg" alt="">
                                 <i class="fas fa-chevron-right"></i>
                             </div>
                         </div>

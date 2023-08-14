@@ -31,6 +31,22 @@ if (!function_exists('user_chat')) {
     }
 }
 
+//function for show piece informations for user (user_id)
+if (!function_exists('show_piece')) {
+    function show_piece($user_id)
+    {
+        global $connexion;
+        $tab = [
+            'user_id' => $user_id
+        ];
+        $sql = "SELECT * FROM pieces WHERE user_id=:user_id"; 
+        $req = $connexion->prepare($sql);
+        $req->execute($tab);
+        // $res = $req->rowCount(); 
+        return $req;
+    }
+}
+
 //function for logout user with her user id
 if (!function_exists("logout_user")) {
     function logout_user($user_id, $status)
@@ -76,6 +92,20 @@ if (!function_exists('show_trip')) {
     }
 }
 
+//function pour afficher les temoignages postés par user depuis la Bdd
+if (!function_exists('show_testimony')) {
+    function show_testimony()
+    {
+        global $connexion;
+
+        $sql = "SELECT * FROM users, comment WHERE users.unique_id = comment.user_id AND comment.posted = 0  ORDER BY id_com DESC";
+        $req = $connexion->query($sql);
+        // $req->execute();
+
+        return $req;
+    }
+}
+
 //function pour afficher les trajets recherchés par user passés en get
 if (!function_exists('show_trip_search')) {
     function show_trip_search($depart, $destination, $date_dep)
@@ -88,7 +118,7 @@ if (!function_exists('show_trip_search')) {
             'date_depart' => $date_dep
         ];
 
-        $sql = "SELECT * FROM users, trip WHERE users.unique_id = trip.user_id AND depart= :depart AND destination= :destination AND date_depart= :date_depart  ORDER BY id_voy DESC";
+        $sql = "SELECT * FROM users, trip WHERE users.unique_id = trip.user_id AND depart =:depart AND destination =:destination AND date_depart =:date_depart  ORDER BY id_voy DESC";
 
         $req = $connexion->prepare($sql);
         $req->execute($tab);
@@ -161,14 +191,14 @@ if (!function_exists('details_reservation_users')) {
 
 //function for date format, convert to date for database
 if (!function_exists('date_arr')) {
-    function date_arr($date)
-    {
-        $text  = $date;
-        $mois = array('Janvier', 'Fevrier', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Aout', 'Septembre', 'Octobre', 'Novembre', 'Decembre');
-        $moisarr = array('01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12');
-        $text1 = str_replace(' ', '-', $text);
+
+    function date_arr($date){
+        $text  =$date;
+        $mois = array('Janvier','Fevrier','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Decembre');
+        $moisarr = array('01','02','03','04','05','06','07','08','09','10','11','12');
+        $text1 = str_replace(' ','-',$text);
         $text2 = str_replace($mois, $moisarr, $text1);
-        return $date_search =  date("Y-m-d", strtotime($text2));
+        return  date("Y-m-d", strtotime($text2));
     }
 }
 
@@ -256,12 +286,14 @@ if (!function_exists('details_modify_trip')) {
 //Css Provenant du social network
 
 //function pour les messages d'alerts
-if (!function_exists('set_flash')) {
+if (!function_exists('setflash')) {
     # function pour les messages alerts et le type c-a-d class CSS
-    function set_flash($message, $type = 'info')
+    function setflash($message, $status = 'success')
     {
-        $_SESSION['notification']['message'] = $message;
-        $_SESSION['notification']['type'] = $type;
+        $_SESSION['flash'][] = array(
+            'message' => $message,
+            'status' => $status
+        );
     }
 }
 

@@ -2,7 +2,7 @@
 
 
 <section class="prochains" id="prochains">
-    <div class="max-width">
+    <div class="max-width">  
         <h2 class="title">Prochains trajets</h2>
         <div class="serv-content">
             <?php
@@ -63,7 +63,7 @@
                                         }
                                         ?>
                                     </div>
-                                    <span class="bio">J'aime ceux qui m'aime !</span>
+                                    <span class="bio"><?= $row['Bio'] ? substr($row['Bio'], 0, 50) : "J'aime handygo !" ?></span>
                                 </div>
                             </div>
                         </a>

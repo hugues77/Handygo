@@ -90,10 +90,10 @@ require_once "layout/partials/topbar-2.php";
                         </div>
 
                         <div class="page date">
-                            <div class="title1">Date de Voyage : </div>
+                            <div class="title1">Date du Voyage : </div>
                             <div class="field">
                                 <div class="label">Date de départ</div>
-                                <input type="text" id="date-depart" name="date-depart" class="input-2">
+                                <input type="text" id="date-depart" name="date-trajet" class="input-2">
                             </div>
 
                             <div class="heure">

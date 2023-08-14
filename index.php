@@ -6,6 +6,7 @@ session_start();
 require_once 'vendor/autoload.php'; 
 require_once 'functions/main.php';
 require_once 'functions/functions.php';
+// require_once 'ajax/function.php';
 
 //Initialiser date en francais
 setlocale(LC_TIME, 'fr.utf8');
@@ -32,7 +33,7 @@ $router->map('GET|POST','/booking/modify-booking','booking/modify-booking');
 $router->map('GET|POST','/booking/modify-trip','booking/modify-trip'); 
 $router->map('GET|POST','/user/[i:user_id]','user', 'user');
 $router->map('GET|POST','/test','test');
-$router->map('GET|POST','/avis','avis');
+$router->map('GET|POST','/informations/avis/[i:user_id]','informations/avis');
 $router->map('GET|POST','/report/trip-alert','report/trip-alert');
 $router->map('GET|POST','/report/report','report/report');
 $router->map('GET|POST','/offres/summary','summary');

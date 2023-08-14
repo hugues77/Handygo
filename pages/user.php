@@ -31,8 +31,8 @@ require_once "layout/partials/topbar-2.php";
                     <p class="expert">Niveau d'expérience : Débutant</p>
                     <small class="user-bio">
                         <?=$row['Bio'] ? $row['Bio'] : 'Handygo me facilite tellement la vie pour l\'ensemble de mes trajets,Rejoins-nous dans l\'aventure'  ?>
-                    </small>
-                    <a href="/avis">
+                    </small> 
+                    <a href="/informations/avis/<?=$row['Unique_ID'] ?> ">
                         <div class="avis">
                             <div class="note">
                                 <small><i class="fas fa-star"></i>4,4 / 5 - 22 avis</small>

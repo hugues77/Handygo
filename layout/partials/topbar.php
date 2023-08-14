@@ -23,9 +23,9 @@ if (isset($_SESSION["unique_id"])) {
                 <?php if(!isset($_SESSION['unique_id']) AND !isset($_SESSION['image'])): ?>
                     <a class="connexion_btn" href="/form">Connexion | Inscription</a>
                 <?php elseif(isset($_SESSION['unique_id']) AND ($row['Image'] == 'image.png')): ?>
-                    <a class="connexion_btn" href="/abonnes"><img src="../images/users/image.png" alt="'.$row['Prenom'].'"> Mon Espace Abonné</a>
+                    <a class="connexion_btn" href="/abonnes"><img src="../../images/users/image.png" alt="'.$row['Prenom'].'"> Mon Espace Abonné</a>
                 <?php elseif(isset($_SESSION['unique_id']) AND isset($_SESSION['image'])): ?>
-                    <a class="connexion_btn" href="/abonnes"><img src="../images/users/<?= $row['User_time'].'/' . $row['Image']  ?>" alt="<?=$row['Prenom'] ?>"> Mon Espace Abonné</a>
+                    <a class="connexion_btn" href="/abonnes"><img src="../../images/users/<?= $row['User_time'].'/' . $row['Image']  ?>" alt="<?=$row['Prenom'] ?>"> Mon Espace Abonné</a>
                 <?php endif; ?>
                 
             </li>

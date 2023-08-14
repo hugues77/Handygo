@@ -54,7 +54,7 @@ foreach ($rows as $row) :
                         }
                         ?>
                     </div>
-                    <span class="bio">J'aime ceux qui m'aime !</span>
+                    <span class="bio"><?= $row['Bio'] ? substr($row['Bio'], 0, 50) : "J'aime handygo !" ?></span>
                 </div>
             </div>
         </a>

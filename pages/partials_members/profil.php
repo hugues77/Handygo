@@ -1,7 +1,7 @@
 <?php
 //droit d'accès - accès une fois connectés
 if (!isset($_SESSION['unique_id'])) {
-    header("Location:/");
+    header("Location:/"); 
 }
 
 $title = "Mon profil Handygo";
@@ -12,16 +12,17 @@ $year = date("Y");
 $naissance = $row['Date_naissance'];
 $naissance_year = date("Y", strtotime($naissance));
 // calcul de l'age
-$old = ($year - $naissance);
+$old = ($year-$naissance); 
 
 
-?>
+?> 
 <div class="abonnes">
     <div class="">
         <div class="abonnes-content">
             <div class="topbar-3">
                 <?php require_once "layout/partials/topbar-3.php"; ?>
                 <div class="home_content">
+                    
                     <form class="profil" enctype="multipart/form-data">
                         <h2 class="title-heading">Mon Profil Handy go, Débutant</h2>
                         <div class="error-text error-name"></div>
@@ -52,21 +53,28 @@ $old = ($year - $naissance);
                             </div>
                             <div class="mel">
                                 <span><i class="fas fa-envelope"></i><?= $row['Email'] ?></span><br>
-                                <span><i class="fa fa-phone"></i><?= $row['Tel1'] ? $row["Tel1"] : 'Ajouter votre téléphone' ?></span>
+                                <span><i class="fa fa-phone"></i><?= strlen($row['Tel1']) >10 ? $row["Tel1"] : 'Ajouter votre téléphone' ?></span>
                                 <p><i class="fas fa-id-badge"></i> <?= $row['Unique_ID'] ?> </p>
                             </div>
                         </div>
                         <hr class="line-profil">
                         <div class="identite">
+                            <?php
+                                //query for select the news for user
+                                $pieces = show_piece($_SESSION["unique_id"]);
+                                if ($pieces->rowCount() > 0) {
+                                    $piece = $pieces->fetch(PDO::FETCH_ASSOC);
+                                }
+                            ?> 
                             <div class="vehicule">
-                                <span><i class="fas fa-xmark-circle"></i>Immatriculation vérifiée</span><br>
+                                <span><i class="fa-solid fa-hourglass-start"></i>Immatriculation vérifiée</span><br>
                                 <span><i class="fas fa-xmark-circle"></i>Permis de conduire vérifié</span><br>
                                 <span><i class="fas fa-xmark-circle"></i>Numéro de téléphone vérifié</span><br>
                                 <span><i class="fas fa-xmark-circle"></i>Email vérifié</span>
                             </div>
                             <div class="pieces">
-                                <span><i class="fas fa-xmark-circle"></i>Pièce d'identité vérifiée</span><br>
-                                <span><i class="fas fa-xmark-circle"></i>Adresse physique vérifiée</span><br>
+                                <span><i class="fas fa-xmark-circle"></i>Pièce d'identité vérifiée</span><br> 
+                                <span><i class="fa-solid fa-hourglass-start"></i>Adresse physique vérifiée</span><br>
                                 <span><i class="fas fa-xmark-circle"></i>Casier judiciaire vérifié</span>
                             </div>
                         </div>

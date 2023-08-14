@@ -10,7 +10,7 @@
                 <i class="fas fa-circle-dot trj_a"></i>
             </div> 
             <div>
-                <input id="date_search" name="date_dep" class="date-search" type="text" placeholder="Choisir la date">
+                <input id="date_search" name="date_dep" class="date-search" type="text" placeholder="Choisir la date">  
                 <i class="fas fa-calendar-days date_part"></i>
             </div>
         </div>

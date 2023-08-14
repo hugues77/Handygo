@@ -2,54 +2,48 @@
 //droit d'accès - accès une fois connectés
 if (isset($_SESSION['unique_id'])) {
 
-    $title = "Bienvenue au PECEP, Amusez-vous bien !";
+    $title = "Bienvenue au HandyGo, Amusez-vous bien !";
     //menu - Navbar
     require_once "layout/partials/topbar-2.php";
 
     //ma date d'anniversaire (date de naissance) 
 
-?>
+?> 
     <section class="list">
         <div class="max-width">
             <h2 class="list-title">Faites vérifier vos pièces pour plus de confiance; C'est parti !</h2>
             <div class="list-content">
                 <div class="col-list1"></div>
-                <div class="col-list2">
+                <div class="col-list2 complete-user">
                     <hr>
                     <div class="formulaire-info">
-                        <form class="complete-user" enctype="multipart/form-data">
-                            <div class="error-text error-name"></div>
+                        <div class="error-text error-name"></div>
 
-
-                            <div class="field">
-                                <select type="text" name="document-text" id="" placeholder="Choisir le document" class="">
-                                    <option value="" selected>Selectionner un document</option>
-                                    <option value="immatriculation">Immatriculation</option>
-                                    <option value="image-vehicule">Photo du vehicule / moto</option>
-                                    <option value="identite">Pièce d'identité</option>
-                                    <option value="permis">Permis de conduire</option>
-                                    <option value="j-adresse">Justificatif d'adresse</option>
-                                </select>
-                            </div>
-                            <div class="field">
-                                <input type="text" name="num_piece" placeholder="Indiquer le numéro de la pièce">
-                            </div>
-                            <div class="field image">
-                                <!-- <input type="text" name="image" id="" placeholder="Choisir votre photo de profil " required> -->
-                                <input type="file" name="document-user" id="file-user" hidden="hidden" accept=".pdf, .png, .jpg, .jpeg, .PDF, .PNG, .JPG, .JPEG">
-                                <button class="custom-image"><i class="fas fa-camera-retro camera-retro"></i>Choisir votre document </button>
-                                <span class="custom-text">Aucun fichier choisi pour l'instant</span>
-                            </div>
-                            <div class="field-user m-complete">
-
-                                <div class="field m-field">
-                                    <input type="submit" class="" value="annuler les modifications">
-                                </div>
-                                <div class="field">
-                                    <input type="submit" class="" value="valider mes Informations">
-                                </div>
-                            </div>
-                        </form>
+                        <div class="piece identite">
+                            <span>Pièce d'identité</span>
+                            <span><i class="fa-solid fa-chevron-right"></i></span>
+                        </div>
+                        <div class="piece permis">
+                            <span>Permis de conduire</span>
+                            <span><i class="fa-solid fa-chevron-right"></i></span>
+                        </div>
+                        <div class="piece immat">
+                            <span>Plaque d'immatriculation </span>
+                            <span><i class="fa-solid fa-chevron-right"></i></span>
+                        </div>
+                        <div class="piece telephone">
+                            <span>Numéro de téléphone</span>
+                            <span><i class="fa-solid fa-chevron-right"></i></span>
+                        </div>
+                        <div class="piece adresse-phy">
+                            <span>Adresse physique</span>
+                            <span><i class="fa-solid fa-chevron-right"></i></span>
+                        </div>
+                        <div class="piece email">
+                            <span>Email</span>
+                            <span><i class="fa-solid fa-chevron-right"></i></span>
+                        </div>
+                        <small class="justificatif">* le justificatif d'adresse peut simplement être une facture du SNEL, Régideso ou encore tout autre document officiel..</small>
                     </div>
                 </div>
                 <div class="col-list3"></div>

@@ -6,12 +6,15 @@ if(isset($_SESSION['unique_id'])){
     if(isset($_SESSION['ref'])){
 
         //transform date for format database
-        $date_depart  = date_arr($_POST['date-depart']);
+        $date_depart  = date_arr($_POST['date-trajet']);
         // $date_arrivee  = date_arr($_POST['date-arrivee']);
 
         $h_depart = htmlentities(trim($_POST['h-depart'])); 
-        $h_arrivee = htmlentities(trim($_POST['h-arrivee']));
+        $h_arrivee = htmlentities(trim($_POST['h-arrivee'])); 
         $date_voy = 1;  
+
+
+
         
         if(!empty($date_depart) && !empty($h_depart)){ 
             //Update the data of trip for date part

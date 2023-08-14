@@ -1,14 +1,14 @@
 
 //Button select image for user
 const formComplete = document.querySelector('.formulaire-info form.complete-user');
-const errorComplete = document.querySelector(".formulaire-info .error-name");
+const errorComplete = document.querySelector(".formulaire-info .complete-user .error-name");
 
-//select file BTn
+//select file BTn 
 // const fileUser  = document.querySelector('#file-user');
 // const customImage  = document.querySelector('.custom-image');
 // const customTxt  = document.querySelector('.custom-text');
 //btn valider signup
-const BtnComplete = document.querySelector(".button-complete .btn-complete");
+const BtnComplete = document.querySelector(".field-user .complete-user-doc");
 
 formComplete.onsubmit = (e)=>{
     e.preventDefault(); //preventing form from submiting
@@ -23,7 +23,7 @@ fileUser.onchange = () =>{
     }else{
         customTxt.innerHTML = "Aucun fichier choisi pour l'instant";
     }
-}
+} 
 
 //traitement
 BtnComplete.onclick = () =>{
@@ -38,7 +38,7 @@ BtnComplete.onclick = () =>{
                 if(data == "success"){
                     //signaler que user is saving with success
                     // confirm("super !");
-                    window.location="/abonnes";  
+                    window.location="/abonnes/profil";  
                 }else{
                     errorComplete.textContent = data;
                     errorComplete.style.display = "block";

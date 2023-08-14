@@ -61,7 +61,7 @@ CREATE TABLE  `reservation` (
 -- --------------------------------------------------------
 --
 --
--- Table structure for table `trip`
+-- Table structure for table `comment`
 --
 
 CREATE TABLE  `comment` (
@@ -72,6 +72,22 @@ CREATE TABLE  `comment` (
   `Description_com` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `posted` int DEFAULT 0,
   PRIMARY KEY(`ID_com`)
+) ENGINE=MYISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pieces`
+--
+
+CREATE TABLE  `pieces` (
+  `ID_piece` int NOT NULL AUTO_INCREMENT,
+  `user_ID` int NOT NULL,
+  `num_piece` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `document_piece` varchar(100) DEFAULT "document.png"  COLLATE utf8mb4_unicode_ci,
+  `Date_piece` timestamp DEFAULT CURRENT_TIMESTAMP NOT NULL,
+  `posted` int DEFAULT 0,
+  PRIMARY KEY(`ID_piece`)
 ) ENGINE=MYISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------

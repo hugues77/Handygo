@@ -708,6 +708,20 @@ section .title::after {
 .owl-dot:hover {
   background: crimson !important;
 }
+.teams .carousel .card2 span.name{
+  text-transform: capitalize;
+}
+.teams .carousel .card2 hr.line{
+  border: 1px solid crimson;
+  width: 100%;
+}
+.teams .carousel .card2:hover hr.line{
+  border: 1px solid #fff;
+  width: 100%;
+}
+.teams .max-width .text-comment{
+  text-align: center;
+}
 .teams .btn-temoignage{
   text-align: center;
   margin-top: 30px;
@@ -1599,6 +1613,11 @@ button.btn-login {
   cursor: pointer;
   margin-bottom: 10px;
 }
+.topbar-3 .home_content .identite .vehicule span i.fa-hourglass-start,
+.topbar-3 .home_content .identite .pieces span i.fa-hourglass-start{
+  color: #ffde34;
+  /* color: gainsboro; */
+}
 .topbar-3 .home_content .user-bio i{
   margin-right: 5px;
 }
@@ -1694,6 +1713,29 @@ button.btn-login {
 .formulaire-info form.info-user hr.line-info{
   margin-top: 10px;
   border: 2px solid darkgray;
+}
+.formulaire-info form.info-user .field{
+  margin-top: 25px;
+}
+.complete-user .formulaire-info .piece{
+  display: grid;
+  grid-template-columns: 98% 2%;
+  /* text-align: left; */
+  font-size: 20px;
+  font-weight: 500;
+  background: #005b8f;
+  color: #fff;
+  padding: 15px;
+  border-radius: 6px;
+  margin-top: 10px;
+  transition: ease-in-out;
+  cursor: pointer;
+}
+.formulaire-info small.justificatif{
+  font-family: 'Poppins';
+  color: darkgray;
+  font-size: 12px;
+  text-align: justify;
 }
 
 
@@ -2590,9 +2632,12 @@ font-family: "Popins", sans-serif;
 }
 
 /* Avis page styling start */
-.avis .avis-content .col-avis2 h1 {
+.avis .avis-content .col-avis2 h2.text-title {
   text-align: center;
   color: #182c61;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-size: 35px;
 }
 .avis .avis-content .col-avis2 .note-gen {
   font-size: 70px;

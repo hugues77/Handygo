@@ -1,9 +1,22 @@
-<?php if(isset($_SESSION['notification']['message'])): ?>
-    <div class="container">
-        <div class="alert alert-<?= $_SESSION['notification']['type'] ?>">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-            <h6><?= $_SESSION['notification']['message'] ?></h6>
-        </div>
-    </div>
-    <?php $_SESSION['notification'] = []; ?>
-<?php endif; ?>
+<?php
+//messages alert
+if(isset($_SESSION['flash'])){
+    foreach($_SESSION['flash'] as $flash){
+        $message = $flash['message'];
+        $status = $flash['status'];
+
+        switch($status){
+            case 'success':
+                $conf = "Félicitations !";
+                break;
+            case 'danger':
+                $conf = "Désolé !"; 
+        }
+
+        echo'
+        <div class="home-alert '.$status.'">'.$message.'</div>
+        ';
+    }
+    unset($_SESSION['flash']);
+}
+?>

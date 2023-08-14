@@ -17,13 +17,13 @@ if (isset($_SESSION['unique_id'])) {
 
         $sql = "SELECT DISTINCT * FROM users LEFT JOIN trip ON users.unique_id = trip.user_id WHERE unique_id =:unique_id AND ref_voy =:ref_voy  ORDER BY id_voy DESC LIMIT 1";
         $req = $connexion->prepare($sql);
-        $req->execute($tab);
+        $req->execute($tab);    
 
         if ($req->rowCount() > 0) {
             //if messages exist for two users
             $row = $req->fetch(PDO::FETCH_ASSOC);
             if ($row['Ref_voy'] == $ref_voy) { //if this equals then show the details trip
-                if ($row['itineraire'] == 1) : ?>
+                if ($row['itineraire'] == 1) : ?> 
 
                     <div class="timeline-item">
                         <div class="time">Step 1</div>

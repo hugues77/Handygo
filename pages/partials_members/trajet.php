@@ -8,8 +8,6 @@ $title = "Trajets Handygo";
 //menu - Navbar
 require_once "layout/partials/topbar-2.php";
 
-
-
 ?>
 <div class="abonnes">
     <div class="">
@@ -29,12 +27,6 @@ require_once "layout/partials/topbar-2.php";
 
                                         //affiche tous les trajets reservés par le meme user
                                         $row_res_user = details_reservation_users($_SESSION['unique_id']);
-
-                                        // display different customers who have booked this trip
-                                        // $user_voyageur = $res['Unique_ID']; //selectionne user voyageur, celui qui a publier le trajet - table trip
-                                        // $trip_booked = display_user_booked($row['Ref_voy'], $user_voyageur);
-                                        // $response_display = $trip_booked->fetchAll(PDO::FETCH_ASSOC);
-                                        // var_dump($rep);
 
                                         if ($row_trip_user->rowCount() > 0) {
                                             $rows = $row_trip_user->fetchAll(PDO::FETCH_ASSOC);
@@ -95,7 +87,7 @@ require_once "layout/partials/topbar-2.php";
                                                                     }
                                                                     ?>
                                                                 </div>
-                                                                <span class="bio">J'aime ceux qui m'aime !</span>
+                                                                <span class="bio"><?= $row['Bio'] ? substr($row['Bio'], 0, 50) : "J'aime handygo !" ?></span>
                                                             </div>
                                                         </div>
                                                     </a>
@@ -170,7 +162,7 @@ require_once "layout/partials/topbar-2.php";
                                                                     }
                                                                     ?>
                                                                 </div>
-                                                                <span class="bio">J'aime ceux qui m'aime !</span>
+                                                                <span class="bio"><?= $row['Bio'] ? substr($row['Bio'], 0, 50) : "J'aime handygo !" ?></span>
                                                             </div>
                                                         </div>
                                                     </a>

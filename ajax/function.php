@@ -56,6 +56,17 @@ if (!function_exists('name_user')) {
     }
 }
 
+//Update to complete the all user in the database
+if (!function_exists('update_info_user')) {
+    function update_info_user($nom, $prenom, $date, $tel, $bio, $user_id)
+    {
+        global $connexion;
+        $user_update = $connexion->prepare("UPDATE users SET nom =:nom, prenom=:prenom, date_naissance =:date_naissance, tel1 =:tel1, bio =:bio WHERE unique_id=:unique_id");
+        $user_update->execute(array('nom' => $nom, 'prenom' => $prenom, 'date_naissance' => $date, 'tel1' =>$tel, 'bio' =>$bio, 'unique_id' => $user_id));
+        return $user_update;
+    }
+}
+
 //Update to complete the data of naissance into user in the database
 if (!function_exists('naissance_user')) {
     function naissance_user($naissance, $user_id)
@@ -77,6 +88,56 @@ if (!function_exists('profil_user_image')) {
         return $naissance_update_img;
     }
 }
+
+//insert user_id for table pieces in the database 
+if (!function_exists('insert_user_id_piece')) {
+    function insert_user_id_piece($user_id)
+    {
+        global $connexion;
+        $sql2 = "INSERT INTO pieces (user_id) VALUES (?)";
+        $req = $connexion->prepare($sql2);
+        $data_insert = $req->execute(array( $user_id));
+        return $data_insert;
+    }
+}
+
+//function, verify if user_id exist table piece_id
+if (!function_exists('user_id_piece')) {
+    function user_id_piece($user_id)
+    {
+        global $connexion;
+        $tab = [
+            'user_id' => $user_id
+        ];
+        $sql = "SELECT user_id FROM users WHERE user_id=:user_id";
+        $req = $connexion->prepare($sql);
+        $req->execute($tab);
+        $res = $req->rowCount();
+        return $res;
+    }
+}
+//Update to complete document foruser in the database
+if (!function_exists('update_doc_user')) {
+    function update_doc_user($doc_piece, $user_id)
+    {
+        global $connexion; 
+        $upd_doc = $connexion->prepare("UPDATE pieces SET immatric =:immatric WHERE user_id=:user_id");
+        $upd_doc->execute(array('immatric' => $doc_piece, 'user_id' =>$user_id));
+        return $upd_doc;
+    }
+}
+
+//function for update posted table piece
+if (!function_exists("update_posted_piece")) {
+    function update_posted_piece($user_id)
+    {
+        global $connexion;
+        $upd_posted = $connexion->prepare("UPDATE pieces SET posted =:posted WHERE user_id=:user_id AND ref_voy =:ref_voy");
+        $upd_posted->execute(array('posted' => 1, 'user_id' => $user_id));
+        return $upd_posted;
+    }
+}
+
 
 //Update to complete the data of naissance with image into user in the database
 if (!function_exists('update_profil_user_image')) {
@@ -259,12 +320,22 @@ if (!function_exists('update_trip_confirm_a')) {
 
 //function for buton retour post-trip with title section ITINERAIRE
 if (!function_exists("update_itiner_title")) {
-    function update_itiner_title($user_id, $ref)
+    function update_itiner_title($user_id, $ref) 
     {
         global $connexion;
         $upd_itin = $connexion->prepare("UPDATE trip SET itineraire =:itineraire WHERE user_id=:user_id AND ref_voy =:ref_voy");
         $upd_itin->execute(array('itineraire' => 0, 'user_id' => $user_id, 'ref_voy' => $ref));
         return $upd_itin;
+    }
+}
+//function for button retour ITINERAIRE / delete trajet
+if (!function_exists("delete_ref_trip")) {
+    function delete_ref_trip($ref) 
+    {
+        global $connexion;
+        $del_itin = $connexion->prepare("DELETE FROM trip WHERE ref_voy =:ref_voy");
+        $del_itin->execute(array('ref_voy' => $ref));
+        return $del_itin;
     }
 }
 
@@ -303,14 +374,13 @@ if (!function_exists("update_paiement_title")) {
 
 //function for date format, convert to date for database
 if (!function_exists('date_arr')) {
-    function date_arr($date)
-    {
-        $text  = $date;
-        $mois = array('Janvier', 'Fevrier', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Aout', 'Septembre', 'Octobre', 'Novembre', 'Decembre');
-        $moisarr = array('01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12');
-        $text1 = str_replace(' ', '-', $text);
+    function date_arr($date){
+        $text  =$date;
+        $mois = array('Janvier','Fevrier','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Decembre');
+        $moisarr = array('01','02','03','04','05','06','07','08','09','10','11','12');
+        $text1 = str_replace(' ','-',$text);
         $text2 = str_replace($mois, $moisarr, $text1);
-        return $date_search =  date("Y-m-d", strtotime($text2));
+        return  date("Y-m-d", strtotime($text2));
     }
 }
 
