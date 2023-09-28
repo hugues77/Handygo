@@ -54,15 +54,15 @@ require_once "layout/partials/topbar-2.php"; ?>
                         <div class="field">
                             <input type="email" name="email_register" id="" placeholder="Adresse e-mail" required>
                         </div>
-                        <div class="field">
+                        <div class="field psw">
                             <input type="password" name="password_register" id="" placeholder="Mot de passe" required>
-                            <!-- <i class="fas fa-eye"></i> -->
-                            <i class="fas fa-key"></i>
+                            <i class="fas fa-eye psw"></i>
+                            <!-- <i class="fas fa-key"></i> -->
                         </div> 
-                        <div class="field">
+                        <div class="field psw-i">
                             <input type="password" name="password_register_confirm" id="" placeholder="Confirmer Mot de passe" required>
-                            <!-- <i class="fas fa-eye"></i> -->
-                            <i class="fas fa-key"></i>
+                            <i class="fas fa-eye psw-i"></i>
+                            <!-- <i class="fas fa-key"></i> -->
                         </div>
                         <div class="field">
                             <input type="submit" name="submit_register" id="" value="S'inscrire"> 
@@ -71,9 +71,9 @@ require_once "layout/partials/topbar-2.php"; ?>
                     </form>
 
                     <!-- formulaire pour forgot password -->
-                    <form  class="password">
+                    <form  class="password"> 
                         <div class="field">
-                            <input type="email" name="" id="" placeholder="Adresse e-mail" required>
+                            <input type="email" name="mail_password_forgot" id="" placeholder="Adresse e-mail" required>
                         </div>
                         <div class="pass-link">Email oublié ?<a href="/#contact"> Veuillez nous contacter</a></div>
                         <div class="field">

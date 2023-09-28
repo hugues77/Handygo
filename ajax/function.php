@@ -185,6 +185,51 @@ if (!function_exists('login_user')) {
     }
 }
 
+//password user into the database
+if (!function_exists('verify_password_user')) {
+    function verify_password_user($user_id, $password)
+    {
+        global $connexion;
+        $tab = [
+            'unique_id' => $user_id,
+            'password' => sha1($password)
+        ];
+        $sql = "SELECT * FROM users WHERE unique_id=:unique_id AND password=:password";
+        $req = $connexion->prepare($sql);
+        $req->execute($tab);
+        $res = $req->rowCount();
+        // $res = $req->fetchAll(PDO::FETCH_ASSOC);
+        return $res;
+    }
+}
+
+//update password user
+if (!function_exists('update_password_user')) {
+    function update_password_user($password, $user_id)
+    {
+        global $connexion;
+
+        $tab = [
+            'unique_id' => $user_id,
+            'password' => sha1($password)
+        ];
+        $update_pass = $connexion->prepare("UPDATE users SET password =:password WHERE unique_id =:unique_id");
+        $update_pass->execute($tab);
+        return $update_pass;
+    }
+}
+
+//Update token user
+if (!function_exists('update_token_password')) {
+    function update_token_password($token, $email)
+    {
+        global $connexion; 
+        $update_token = $connexion->prepare("UPDATE users SET token_user =:token_user WHERE email =:email");
+        $update_token->execute(array( 'email' => $email, 'token_user' =>$token));
+        return $update_token;  
+    }
+}
+
 //insert into messages for user in the database/ table message
 if (!function_exists('insert_messages')) {
     function insert_messages($incoming_id, $outgoing_id, $message)

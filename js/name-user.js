@@ -7,7 +7,7 @@ formUserName.onsubmit = (e)=>{
 }
 
 BtnName.onclick = () =>{
-    //let's start Ajax
+    //let's start Ajax 
     let xhr = new XMLHttpRequest();
     xhr.open("POST", "../ajax/name-user.php", true);
     xhr.onload = () =>{

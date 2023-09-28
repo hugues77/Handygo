@@ -8,7 +8,7 @@
 
 
     $success = 0;
-    $msg = "Une Erreur !"; 
+    $msg = "Une Erreur !";   
 
     if(!empty($email_login) && !empty($password_login)){
         //check user email is valid or not

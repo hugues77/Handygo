@@ -1,6 +1,12 @@
 <?php
     if(isset($_SESSION['unique_id'])){  
+        unset($_SESSION['unique_id']);  
+        unset($_SESSION['time']);
+        unset($_SESSION['prenom']);
+        unset($_SESSION['nom']);
+        unset($_SESSION['image']);
+        unset($_SESSION['statut']);
         unset($_SESSION['ref']);
-        header("Location:/abonnes");
-    } 
+        header("Location:/form");
+    }
 ?>

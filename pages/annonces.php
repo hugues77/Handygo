@@ -3,10 +3,10 @@ $title = "Annonces des voyages";
 require_once "layout/partials/topbar-2.php";
 //section start
 require_once "layout/partials/section_start.php";
-// require_once "layout/partials/search_section.php";  
+// require_once "layout/partials/search_section.php";   
 
 ?>
-<div class="form-search-home">
+<div class="form-search-home">   
     <form method="GET">
         <div class="search-bar-home annonce_bar">
             <div class="depart-input">
@@ -27,6 +27,31 @@ require_once "layout/partials/section_start.php";
             <i class="fas fa-search"></i>
         </div>
     </form>
+</div>
+
+<!-- menu for phone -->
+<div class="form-search-phone">
+    <div></div>
+    <div class="formSearch">
+        <form action="annonces" method="GET">
+            <div class="search-bar-home-phone">
+                <div class="depart-input">
+                    <input type="text" name="depart" placeholder="Ville de Départ" id="v-depart">
+                    <i class="fas fa-circle-dot trj_d"></i> 
+                </div>
+                <div>
+                    <input type="text" name="arrivee" placeholder="Ville de  Destination" id="v-arrive">
+                    <i class="fas fa-circle-dot trj_a"></i>
+                </div>
+                <div>
+                    <input id="date-depart" name="date_dep" class="date-search" type="text" placeholder="Choisir la date">
+                    <i class="fas fa-calendar-days date_part"></i>
+                </div>
+            </div>
+            <button class="search-bar-right-phone" type="submit" name="search"><i class="fas fa-search"></i>Réchercher</button>
+        </form>
+    </div>
+    <div></div>
 </div>
 
 <!-- Annonces section start -->

@@ -31,7 +31,7 @@ if (isset($_SESSION["unique_id"])) {
             </li>
         </ul>
         <div class="menu-btn">
-            <i class="fas fa-bars"></i>
+            <i class="fas fa-bars"></i>    
         </div>
     </div>
 </nav>

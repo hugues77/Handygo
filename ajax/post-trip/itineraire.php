@@ -12,7 +12,7 @@ if(isset($_SESSION['unique_id'])){
     $depart_formated = strstr($depart_voy, ',',true);
     $dest_formated = strstr($depart_voy, ',',true);
 
-    $ref_voy = substr(str_shuffle($depart_formated.$dest_formated.$mode.$user_id), 0,30); //on applique shuffle
+    $ref_voy = substr(str_shuffle($depart_formated.$dest_formated.$mode.$user_id), 0,30); //on applique shuffle     
 
     //on remplace les espaces dans $ref_voy par undescore
     $ref_voy_confirm = (str_replace(' ','_',$ref_voy));

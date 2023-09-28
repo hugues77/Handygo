@@ -1,6 +1,8 @@
 <?php
-//droit d'accès - accès une fois connectés
-
+//droit d'accès - accès une fois connectés  
+if (!isset($_SESSION['unique_id']) AND !isset($_SESSION['token_verify'])) {
+    header("Location:/");
+}
 $title = "Changement mot de Passe!";
 //menu - Navbar
 require_once "layout/partials/topbar-2.php";
@@ -20,21 +22,21 @@ require_once "layout/partials/topbar-2.php";
                         <div class="error-text error-name"></div>
                         <?php if (isset($_SESSION['unique_id'])) : ?>
                             <div class="field">
-                                <input type="password" name="password_login" id="" placeholder="Mot de passe Actuel" required>
+                                <input type="password" name="password_actuel" id="" placeholder="Mot de passe Actuel" required>
                                 <!-- <i class="fas fa-eye"></i> -->
                             </div>
                         <?php endif; ?>
                         <div class="field">
-                            <input type="password" name="password_login" id="" placeholder="Nouveau Mot de passe" required>
+                            <input type="password" name="password_new" id="" placeholder="Nouveau Mot de passe" required>
                             <!-- <i class="fas fa-eye"></i> -->
                         </div>
                         <div class="field">
-                            <input type="password" name="password_login" id="" placeholder="Confirmer Nouveau Mot de passe" required>
+                            <input type="password" name="password_confirm_new" id="" placeholder="Confirmer Nouveau Mot de passe" required>
                             <!-- <i class="fas fa-eye"></i> -->
                         </div>
 
                         <div class="field">
-                            <input type="submit" class="btn-naissance" name="confirm-naissance" id="" value="valider votre modification">
+                            <input type="submit" class="btn-password" name="confirm-password" id="" value="valider votre modification"> 
                         </div>
                     </form>
                 </div>

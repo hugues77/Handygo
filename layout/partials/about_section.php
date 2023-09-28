@@ -1,7 +1,7 @@
 <!-- About section start -->
-<section class="about" id="about">
+<section class="about" id="about">  
     <div class="max-width">
-        <h2 class="title">Gagnez jusqu'à 70% et Faites des économies!</h2>
+        <h2 class="title">Gagnez jusqu'à 70% et Faites des économies!</h2>  
         <div class="about-content">
             <div class="column left">
                 <img src="images/undraw/voyage.png" alt="tinda colis">

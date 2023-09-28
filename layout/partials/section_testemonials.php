@@ -52,7 +52,11 @@
         else {?>
         <h4 class="text-comment">Aucun commentaire a été posté pour l'instant</h4>
         <?php } ?>
-        <div class="btn-temoignage"> Laisser un commentaire</div>
+        <div class="teams-comment-btn">
+            <div></div>
+            <div class="btn-temoignage"> Laisser un commentaire</div>
+            <div></div>
+        </div>
     </div>
     <!-- content modal / form  -->
     <div class="modal-box">

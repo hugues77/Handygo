@@ -18,11 +18,12 @@ $(document).ready(function () {
     $('html').animate({scrollTop: 0});
   });
 
-  // toogle menu navbar
+  // toogle menu navbar - menu pour téléphone
   $(".menu-btn").click(function () {
     $(".navbar1 .menu").toggleClass("active");
+    $(".navbar2 .menu").toggleClass("active");
     $(".menu-btn i").toggleClass("active");
-  });
+  }); 
 
   // script typing animation
   var typed = new Typed(".typing", {

@@ -1,9 +1,9 @@
-const form = document.querySelector('.formulaire-inner .signup');
+const form = document.querySelector('.formulaire-inner .signup');   
 const continueBtn = form.querySelector(".field input[type='submit']");
 const errorSignup = document.querySelector(".formulaire-container .error-signup");
 
 form.onsubmit = (e)=>{
-    e.preventDefault(); //preventing form from submiting
+    e.preventDefault(); //preventing form from submiting   
 }
 
 continueBtn.onclick = () =>{

@@ -45,6 +45,8 @@
         <script src="../../js/naissance-user.js"></script>
         <script src="../../js/profil-user.js"></script>
         <script src="../../js/complete-user.js"></script>
+        <script src="../../js/update-password.js"></script>
+        <script src="../../js/password_forget_user.js"></script>
         <script src="../../js/information-user.js"></script>
 
         <script src="../js/post-trip.js"></script>
