@@ -1,6 +1,6 @@
-<div class="sidebar">  
+<div class="navigation">  
     <ul>
-        <li>
+        <!-- <li>
             <a href="/abonnes" class="chat">
                 <span class="icon"><?= $row['Image'] != 'image.png' ? '<img src="../images/users/' . $row['User_time'] . '/' . $row['Image'] . ' " alt=" ' . $row['Prenom'] . ' ">' : '<img src="../images/users/image.png" alt="' . $row['Prenom'] . '">' ?></span>
                 <span class="title">
@@ -9,6 +9,10 @@
                 <small class="expert">Débutant</small>
             </a>
 
+        </li> -->
+        <li>
+            <!-- <ion-icon name="logo-apple"></ion-icon> -->
+            <span>Mon Esapce Abonné.e</span>
         </li>
         <li>
             <a href="/abonnes">

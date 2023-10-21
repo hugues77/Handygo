@@ -72,7 +72,7 @@ require_once "layout/partials/topbar-2.php"; ?>
 
                     <!-- formulaire pour forgot password -->
                     <form  class="password"> 
-                        <div class="field">
+                        <div class="field"> 
                             <input type="email" name="mail_password_forgot" id="" placeholder="Adresse e-mail" required>
                         </div>
                         <div class="pass-link">Email oublié ?<a href="/#contact"> Veuillez nous contacter</a></div>

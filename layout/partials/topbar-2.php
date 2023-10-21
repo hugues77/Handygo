@@ -14,6 +14,7 @@ if (isset($_SESSION["unique_id"])) {
             <a href="/"><i class="fas fa-cubes me-2"></i>Handy <span>go.</span></a>
         </div>
         <ul class="menu">
+            <!-- <div class="fd-menu"></div> -->
             <li><a href="/">Home</a></li>
             <li><a href="/#about">A propos</a></li>
             <li><a href="/post-trip">Déposer un trajet</a></li>

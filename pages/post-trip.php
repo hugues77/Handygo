@@ -5,7 +5,7 @@ require_once "layout/partials/topbar-2.php";
 ?>
 
 <div class="post-trip">
-    <div class="post-trip-left">
+    <div class="post-trip-left">  
         <div class="post-content">
             <div class="container">
                 <header>Poster mon trajet</header>

@@ -25,6 +25,17 @@ toggle.onclick = function () {
 //   $('.home_content .btn-profil').css("display","grid");
 // });
 
+//Traitement Espace abonnes- page member-2
+let toggleBtn = document.querySelector('.topbar-main .toggle');
+let navigation = document.querySelector('.topbar-4 .navigation');
+let topbarMain = document.querySelector('.home-main');
+
+toggleBtn.onclick = function(){
+  navigation.classList.toggle('active');
+  topbarMain.classList.toggle('active');
+}
+
+
 
 
 

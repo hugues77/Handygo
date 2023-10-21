@@ -22,6 +22,7 @@ $router = new AltoRouter();
 $router->map('GET|POST','/','home');
 $router->map('GET','/user-login','register');
 $router->map('GET','/abonnes','member');
+$router->map('GET','/espace-membre','member-2');
 $router->map('GET','/logout/[i:user_id]','logout');
 $router->map('GET','/logout_ref','logout_ref');
 $router->map('GET','/delete/[i:user_id]','delete_user');

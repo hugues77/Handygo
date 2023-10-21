@@ -1,12 +1,12 @@
 <?php
 //droit d'accès - accès une fois connectés
 if (!isset($_SESSION['unique_id'])) {
-    header("Location:/");
+    // header("Location:/");
 }
 
 $title = "Mon Espace Abonnés";
 //menu - Navbar
-require_once "layout/partials/topbar-2.php";
+require_once "layout/partials/topbar-2.php";   
 
 
 ?>

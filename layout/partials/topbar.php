@@ -10,7 +10,7 @@ if (isset($_SESSION["unique_id"])) {
 ?>
 <nav class="navbar1">
     <div class="max-width">
-        <div class="logo">
+        <div class="logo"> 
             <a href="/"><i class="fas fa-cubes me-2"></i>Handy <span>go.</span></a>
         </div>
         <ul class="menu">
