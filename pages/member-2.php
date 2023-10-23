@@ -64,8 +64,8 @@ require_once "layout/partials/topbar-2.php";
                             </div>
                         </div>
 
-                        <!-- data list -->
                         <div class="details">
+                            <!-- data list -->
                             <div class="recentOrders">
                                 <div class="cardHeader">
                                     <h2>Dérnières Activités</h2>
@@ -87,25 +87,46 @@ require_once "layout/partials/topbar-2.php";
                                             <td>Paris</td>
                                             <td>Andeas</td>
                                             <td>300 CDF</td>
-                                            <td><span class="status delivered">Trajet réalisé</span></td>
+                                            <td><span class="status realize">Trajet réalisé</span></td>
                                         </tr>
                                         <tr>
                                             <td>Kasai</td>
                                             <td>Lomami</td>
                                             <td>Pedro</td>
                                             <td>800 CDF</td>
-                                            <td><span class="status delivered">Trajet non réalisé</span></td>
+                                            <td><span class="status not-realize">Trajet non réalisé</span></td>
                                         </tr>
                                         <tr>
                                             <td>mbandaka</td>
                                             <td>Lisala</td>
                                             <td>Magbetu</td>
                                             <td>1800 CDF</td>
-                                            <td><span class="status delivered">Trajet non réalisé</span></td>
+                                            <td><span class="status on-hold">Trajet en attente</span></td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
+                            <!-- recents messages -->
+                            <div class="recentMessages">
+                                <div class="cardHeader">
+                                    <h2>Mes Dérniers Messagers</h2>
+                                </div>
+                                <table>
+                                    <tr>
+                                        <td><div class="imgBx"><img src="/images/users/hand.jpg" alt=""></div></td>
+                                        <td><h4>Hugues <br><span>kinshasa</span></h4></td>
+                                    </tr>
+                                    <tr>
+                                        <td width="30px"><div class="imgBx"><img src="/images/users/bible_bg.jpg" alt=""></div></td>
+                                        <td><h4>Hugues <br><span>kinshasa</span></h4></td>
+                                    </tr>
+                                    <tr>
+                                        <td width="30px"><div class="imgBx"><img src="/images/users/1685382793.PNG" alt=""></div></td>
+                                        <td><h4>Hugues <br><span>kinshasa</span></h4></td>
+                                    </tr>
+                                </table>
+                            </div>
+
                         </div>
 
                     </div>
