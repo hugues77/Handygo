@@ -5573,6 +5573,32 @@ section .annonces-2 {
   .topbar-3 .home_content .identite {
     display: block;
   }
+
+  /* responsive for espace membre - Topbar-4 */
+  .abonnes-2 .navigation{
+    left: -300px;
+  }
+  .abonnes-2 .navigation.active{
+    left: 0;
+    width: 300px;
+  }
+  .abonnes-2 .home-main{
+    width: 100%;
+    left: 0;
+    }
+  .abonnes-2 .home-main.active{
+    left: 300px;
+  }
+  .abonnes-2 .content-main .cardBox{
+    
+    grid-template-columns: repeat(1,1fr);
+  }
+  .abonnes-2 .content-main .details{
+
+    grid-template-columns: repeat(1,1fr);
+   
+  }
+
 }
 
 @media (max-width: 768px) {
