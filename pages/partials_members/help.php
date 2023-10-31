@@ -10,15 +10,18 @@ require_once "layout/partials/topbar-2.php";
 
 
 ?>
-<div class="abonnes">
+<div class="abonnes abonnes-2">
     <div class="">
         <div class="abonnes-content">
-            <div class="topbar-3">
-                <?php  require_once "layout/partials/topbar-3.php";?> 
-                <div class="home_content">
-                    <h2 class="title-heading">Help Handy Go</h2>
+            <div class="topbar-4">
+                <?php  require_once "layout/partials/topbar-4.php";?> 
+                
+                    <!-- content -- cards  -->
+                    <div class="content-main">
+                        <h2 class="title-heading">Help Handy Go</h2>
 
-                    
+                        
+                    </div>
                 </div>
             </div>
         </div>

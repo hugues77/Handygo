@@ -1,8 +1,8 @@
 <?php
-//droit d'accès - accès une fois connectés
-// if (!isset($_SESSION['unique_id'])) {
-//     header("Location:/");
-// }
+// droit d'accès - accès une fois connectés
+if (!isset($_SESSION['unique_id'])) {
+    header("Location:/");
+}
 
 $title = "Mon Espace Abonnés";
 //menu - Navbar
@@ -13,24 +13,9 @@ require_once "layout/partials/topbar-2.php";
 <div class="abonnes abonnes-2">
     <div class="">
         <div class="abonnes-content">
-            <div class="topbar-4">
+            <div class="topbar-4 ">
                 <?php require_once "layout/partials/topbar-4.php"; ?>
-                <div class="home-main">
-                    <div class="topbar-main">
-                        <div class="toggle">
-                            <ion-icon name="menu-outline"></ion-icon>
-                        </div>
-                        <div class="search">
-                            <label for="">
-                                <input type="text" placeholder="recherche ici">
-                                <ion-icon name="search-outline"></ion-icon>
-                            </label>
-                        </div>
-                        <!-- userImg -->
-                        <div class="user">
-                            <img src="images/users/hand.jpg" alt="">
-                        </div>
-                    </div>
+               
                     <!-- content -- cards  -->
                     <div class="content-main">
                         <h2 class="title-heading">Mon Compte Handy go, Débutant</h2>

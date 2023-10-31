@@ -1384,7 +1384,7 @@ button.btn-login {
   height: 70px;
   border: 2px solid #fff;
 }
-.topbar-3 .round-profil {
+.topbar-4 .round-profil {
   position: absolute;
   /* bottom: 145px;
   right: 450px; */
@@ -1397,15 +1397,15 @@ button.btn-login {
   overflow: hidden;
   margin: -60px 0px 0px 340px;
 }
-.topbar-3 .round-profil input[type="file"] {
+.topbar-4 .round-profil input[type="file"] {
   position: absolute;
   transform: scale(2);
   opacity: 0;
 }
-.topbar-3 .round-profil input[type="file"]::-webkit-file-upload-button {
+.topbar-4 .round-profil input[type="file"]::-webkit-file-upload-button {
   cursor: pointer;
 }
-.topbar-3 .round-profil i {
+.topbar-4 .round-profil i {
   color: #fff;
   font-size: 18px;
 }
@@ -1578,25 +1578,25 @@ button.btn-login {
 
 /* topbar-3 - profil */
 
-.topbar-3 .home_content .identite {
+.topbar-4 .content-main .identite {
   display: grid;
   grid-template-columns: 50% 50%;
   margin-top: 20px;
   font-size: 18px;
   /* color: #04befe; */
 }
-.topbar-3 .home_content .identite .name {
+.topbar-4 .content-main .identite .name {
   text-transform: capitalize;
 }
-.topbar-3 .home_content .identite .name i,
-.topbar-3 .home_content .identite .mel i {
+.topbar-4 .content-main .identite .name i,
+.topbar-4 .content-main .identite .mel i {
   margin-right: 10px;
   color: #04befe;
 }
-.topbar-3 .home_content hr.line-profil {
+.topbar-4 .content-main hr.line-profil {
   margin-top: 8px;
 }
-.topbar-3 .home_content .user-bio p {
+.topbar-4 .content-main .user-bio p {
   margin-top: 18px;
   /* background: #acacac; */
   /* padding: 10px;
@@ -1604,24 +1604,24 @@ button.btn-login {
   margin-right: 10px;
   font-size: 18px;
 }
-.topbar-3 .home_content .identite .vehicule span i,
-.topbar-3 .home_content .identite .pieces span i {
+.topbar-4 .content-main .identite .vehicule span i,
+.topbar-4 .content-main .identite .pieces span i {
   color: crimson;
   margin-right: 5px;
   cursor: pointer;
   margin-bottom: 10px;
 }
-.topbar-3 .home_content .identite .vehicule span i.fa-hourglass-start,
-.topbar-3 .home_content .identite .pieces span i.fa-hourglass-start {
+.topbar-4 .content-main .identite .vehicule span i.fa-hourglass-start,
+.topbar-4 .content-main .identite .pieces span i.fa-hourglass-start {
   color: #ffde34;
   /* color: gainsboro; */
 }
-.topbar-3 .home_content .user-bio i {
+.topbar-4 .content-main .user-bio i {
   margin-right: 5px;
 }
 
-.topbar-3 .home_content .mesinfos1,
-.topbar-3 .home_content .mesinfos {
+.topbar-4 .content-main .mesinfos1,
+.topbar-4 .content-main .mesinfos {
   margin-top: 10px;
   background: #04befe;
   color: #fff;
@@ -1631,7 +1631,7 @@ button.btn-login {
   margin-right: 10px;
   font-weight: bold;
 }
-.topbar-3 .home_content .mesinfos i {
+.topbar-4 .content-main .mesinfos i {
   color: crimson;
   font-weight: bold;
   /* font-size: 30px; */
@@ -1642,7 +1642,7 @@ button.btn-login {
   position: relative;
   left: 69%;
 }
-.topbar-3 .home_content .mesinfos1 i {
+.topbar-4 .content-main .mesinfos1 i {
   color: crimson;
   font-weight: bold;
   /* font-size: 30px; */
@@ -1653,20 +1653,20 @@ button.btn-login {
   position: relative;
   left: 62%;
 }
-.topbar-3 .home_content .mesinfos1 i.active {
+.topbar-4 .content-main .mesinfos1 i.active {
   position: relative;
   left: 70%;
 }
-.topbar-3 .home_content .mesinfos i.active {
+.topbar-4 .content-main .mesinfos i.active {
   position: relative;
   left: 75%;
 }
-.topbar-3 .home_content .btn-profil {
+.topbar-4 .content-main .btn-profil {
   display: grid;
   grid-template-columns: 50% 50%;
   /* display: none; */
 }
-.topbar-3 .home_content .btn-profil .btn-voir {
+.topbar-4 .content-main .btn-profil .btn-voir {
   /* display: inline-block; */
   /* background: #04befe; */
   color: crimson;
@@ -1680,7 +1680,7 @@ button.btn-login {
   cursor: pointer;
   margin-right: 10px;
 }
-.topbar-3 .home_content .btn-profil .btn-pub {
+.topbar-4 .content-main .btn-profil .btn-pub {
   /* display: inline-block; */
   background: crimson;
   color: #fff;
@@ -1813,24 +1813,24 @@ button.btn-login {
 
 /* topbar-3 - trajets */
 
-.topbar-3 .home_content .trajet-es .trajet-aucun {
+.topbar-4 .content-main .trajet-es .trajet-aucun {
   padding-top: 120px;
   font-size: 18px;
   font-weight: 600;
   font-family: "poppins";
   text-align: center;
 }
-.topbar-3 .home_content .trajet-es .trajet-aucun i {
+.topbar-4 .content-main .trajet-es .trajet-aucun i {
   font-size: 50px;
   margin-bottom: 20px;
 }
-.topbar-3 .home_content .trajet-es .trajet-non,
-.topbar-3 .home_content .trajet-es .trajet-oui {
+.topbar-4 .content-main .trajet-es .trajet-non,
+.topbar-4 .content-main .trajet-es .trajet-oui {
   display: grid;
   grid-template-columns: 50% 50%;
 }
-.topbar-3 .home_content .trajet-es .trajet-oui .btn-pub,
-.topbar-3 .home_content .trajet-es .trajet-non .btn-pub {
+.topbar-4 .content-main .trajet-es .trajet-oui .btn-pub,
+.topbar-4 .content-main .trajet-es .trajet-non .btn-pub {
   text-decoration: none;
   /* display: inline-block; */
   /* background: #04befe; */
@@ -1844,8 +1844,8 @@ button.btn-login {
   transition: all 0.3s ease;
   cursor: pointer;
 }
-.topbar-3 .home_content .trajet-es .trajet-oui .btn-voir,
-.topbar-3 .home_content .trajet-es .trajet-non .btn-voir {
+.topbar-4 .content-main .trajet-es .trajet-oui .btn-voir,
+.topbar-4 .content-main .trajet-es .trajet-non .btn-voir {
   text-decoration: none;
   background: crimson;
   color: #fff;
@@ -1859,25 +1859,25 @@ button.btn-login {
   cursor: pointer;
   margin-right: 10px;
 }
-.topbar-3 .home_content .trajet-es .trajet-oui .btn-pub:hover,
-.topbar-3 .home_content .trajet-es .trajet-non .btn-pub:hover {
+.topbar-4 .content-main .trajet-es .trajet-oui .btn-pub:hover,
+.topbar-4 .content-main .trajet-es .trajet-non .btn-pub:hover {
   background: #04befe;
   color: #fff;
 }
-.topbar-3 .home_content .trajet-es .trajet-oui .btn-voir:hover,
-.topbar-3 .home_content .trajet-es .trajet-non .btn-voir:hover {
+.topbar-4 .content-main .trajet-es .trajet-oui .btn-voir:hover,
+.topbar-4 .content-main .trajet-es .trajet-non .btn-voir:hover {
   background: none;
   color: crimson;
 }
-.topbar-3 .home_content .trajet-es .trajet-non,
-.topbar-3 .home_content .trajet-es .trajet-oui {
+.topbar-4 .content-main .trajet-es .trajet-non,
+.topbar-4 .content-main .trajet-es .trajet-oui {
   text-align: center;
 }
-.topbar-3 .home_content .trajet-es hr.trj {
+.topbar-4 .content-main .trajet-es hr.trj {
   border: 2px solid #222;
   margin-top: 12px;
 }
-.topbar-3 .home_content .mesinfos-trajets {
+.topbar-4 .content-main .mesinfos-trajets {
   margin-top: 10px;
   background: #04befe;
   color: #fff;
@@ -1887,7 +1887,7 @@ button.btn-login {
   font-weight: bold;
 }
 
-.topbar-3 .home_content .mesinfos-trajets i {
+.topbar-4 .content-main .mesinfos-trajets i {
   color: crimson;
   font-weight: bold;
   /* font-size: 30px; */
@@ -1907,7 +1907,7 @@ button.btn-login {
   --black2: #999;
 }
 .abonnes-2{
-  min-height: 100vh;
+  min-height: 150vh;
   overflow-x: hidden;
 }
 .abonnes-2 .navigation{
@@ -1928,12 +1928,25 @@ button.btn-login {
   left: 0;
   width: 100%;
 }
+.abonnes-2 .navigation ul li .espace{
+  border: 2px solid var(--black1);
+  padding: 3px 5px 3px 5px;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+.abonnes-2 .navigation ul li .icon-espace{
+  display: none;
+}
+.abonnes-2 .navigation ul li .espace.active{
+  display: none;
+  transition: 0.5s ease;
+}
 .abonnes-2 .navigation ul li{
   position: relative;
   /* width: 200%; */
   list-style: none;
-  border-top-left-radius: 12px;
-  border-bottom-left-radius: 12px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
   /* padding-left: 5px; */
 }
 .abonnes-2 .navigation ul li img{
@@ -1946,11 +1959,15 @@ button.btn-login {
 .abonnes-2 .navigation ul li:nth-child(1){
   margin-top: 70px;
   margin-bottom: 30px;
-  pointer-events: none;
+  /* pointer-events: none; */
   margin-left: 20px;
   color: crimson;
   font-weight: 500;
   font-size: 1.4em;
+}
+.abonnes-2 .navigation ul li:nth-child(1):hover{
+  background: none;
+  color: var(--white);
 }
 .abonnes-2 .navigation ul li a{
   position: relative;
@@ -1963,9 +1980,36 @@ button.btn-login {
 .abonnes-2 .navigation ul li:hover a{
   color: var(--blue);
 }
+
+.abonnes-2 .navigation ul li a .icon {
+  position: relative;
+  display: block;
+  min-width: 60px;
+  height: 60px;
+  line-height: 70px;
+  text-align: center;
+}
+.abonnes-2 .navigation ul li a .icon ion-icon,
+.abonnes-2 .navigation ul li a .icon i {
+  font-size: 1.75em;
+}
+.abonnes-2 .navigation ul li a .title {
+  position: relative;
+  display: block;
+  padding: 0 10px;
+  height: 60px;
+  line-height: 55px;
+  text-align: start;
+  white-space: nowrap;
+}
+
+
+
+
+/* 
 .abonnes-2 .navigation ul li a .icon{
   position: relative;
-  /* display: block; */
+  display: block;
   min-width: 60px;
   height: 40px;
   line-height: 40px;
@@ -1976,12 +2020,12 @@ button.btn-login {
 }
 .abonnes-2 .navigation ul li a .title{
   position: relative;
-  /* display: block; */
+  display: block; */
   /* padding: 0 10px;
   height: 40px;
-  line-height: 40px; */
+  line-height: 40px;
   top: 2px;
-}
+} */
 .abonnes-2 .home-main{
 position: absolute;
 width: calc(100% - 300px);
@@ -2058,8 +2102,8 @@ transition: 0.5s ease;
 
 .abonnes-2 .content-main{
   position: absolute;
-  left: 14px;
-  width: 100%;
+  left: 20px;
+  width: 98%;
 }
 .abonnes-2 .content-main .cardBox{
   position: relative;
@@ -2152,7 +2196,7 @@ transition: 0.5s ease;
   margin-top: 10px;
 }
 .abonnes-2 .content-main .details table thead td{
-font-weight: 600 ;
+  font-weight: 600 ;
 }
 .abonnes-2 .content-main .details .recentOrders table tr{
   color: var(--white);
@@ -5575,19 +5619,73 @@ section .annonces-2 {
   }
 
   /* responsive for espace membre - Topbar-4 */
+  .abonnes-2{
+    min-height: 200vh;
+    overflow-x: hidden;
+  }
   .abonnes-2 .navigation{
-    left: -300px;
+    left: -100%;
+    width: 100%;
+    z-index: 1;
   }
   .abonnes-2 .navigation.active{
     left: 0;
-    width: 300px;
+    width: 100%;
+  }
+  .abonnes-2 .navigation .toggle{
+    z-index: 2;
   }
   .abonnes-2 .home-main{
     width: 100%;
     left: 0;
     }
-  .abonnes-2 .home-main.active{
+    .abonnes-2 .navigation ul li .espace{
+      margin-right: 15px;
+    }
+    .abonnes-2 .navigation ul li .espace.active{
+      display: block;
+    }
+    .abonnes-2 .navigation ul li .icon-espace{
+      display: block;
+      float: right;
+      margin-top: 5px;
+    }
+  /* .abonnes-2 .home-main.active{
     left: 300px;
+  } */
+  .abonnes-2 .home-main.active .toggle{
+    color: #fff;
+    position: fixed;
+    left: initial;
+    right: 0;
+  }
+  .abonnes-2 .content-main{
+    position: absolute;
+    left: 10px;
+    width: 96%;
+  }
+  .abonnes-2 .content-main .details .recentOrders table tbody tr{
+    font-size: 15px;
+    /* font-weight: 400; */
+  }
+ 
+  .abonnes-2 .content-main .details .recentOrders .cardHeader h2{
+    font-size: 20px;
+  }
+  .abonnes-2 .content-main .details .recentOrders table tbody tr .realize{
+    font-size: 10px;
+    font-weight: 500;
+  }
+  .abonnes-2 .content-main .details .recentOrders table tbody tr .not-realize{
+    font-size: 10px;
+    font-weight: 500;
+  }
+  .abonnes-2 .content-main .details .recentOrders table tbody tr .on-hold{
+    font-size: 10px;
+    font-weight: 500;
+  }
+  .abonnes-2 .home-main .topbar-main .user{
+    min-width: 40px;
   }
   .abonnes-2 .content-main .cardBox{
     
@@ -5655,6 +5753,21 @@ section .annonces-2 {
     bottom: 28%;
     left: 50%;
   }
+
+  /* Espace membre */
+  .abonnes-2 .content-main .details{
+
+    grid-template-columns: repeat(1,1fr);
+   
+  }
+  .abonnes-2 .content-main .recentOrders{
+    overflow-x: auto;
+   
+  }
+  .abonnes-2 .content-main .recentOrders .status{
+    white-space: nowrap;
+  }
+
 }
 
 @media (max-width: 690px) {
@@ -5760,5 +5873,22 @@ section .annonces-2 {
   .container1.sign-up-mode::before {
     bottom: 28%;
     left: 50%;
+  }
+
+  /* Espace Membre */
+  .abonnes-2 .content-main .cardBox{
+    grid-template-columns: repeat(1,1fr);
+  }
+  .abonnes-2 .navigation{
+    left: -100%;
+    width: 100%;
+    z-index: 1;
+  }
+  .abonnes-2 .navigation.active{
+    left: 0;
+    width: 100%;
+  }
+  .abonnes-2 .navigation .toggle{
+    z-index: 2;
   }
 }

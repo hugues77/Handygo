@@ -2,12 +2,12 @@
 // Traitement Navbar Abonées - Menu vertical
 const toggle = document.querySelector(".toggle");
 const sidebar = document.querySelector(".sidebar");
-const main = document.querySelector(".home_content");
+const main = document.querySelector(".home_content"); 
 
 const round_profil = document.querySelector(".round-profil");
-const infoProfil = document.querySelector(".home_content .mesinfos i");
-const infoProfil1 = document.querySelector(".home_content .mesinfos1 i");
-const infoTrajet = document.querySelector(".home_content .mesinfos-trajets i");
+const infoProfil = document.querySelector(".mesinfos i");
+const infoProfil1 = document.querySelector(".mesinfos1 i");
+const infoTrajet = document.querySelector(".mesinfos-trajets i");
 
 toggle.onclick = function () {
   sidebar.classList.toggle("active"); 
@@ -28,11 +28,22 @@ toggle.onclick = function () {
 //Traitement Espace abonnes- page member-2
 let toggleBtn = document.querySelector('.topbar-main .toggle');
 let navigation = document.querySelector('.topbar-4 .navigation');
-let topbarMain = document.querySelector('.home-main');
+let topbarMain = document.querySelector('.home-main'); 
+
+let espace = document.querySelector('.espace');
+let IonEspace = document.querySelector('.icon-espace');
 
 toggleBtn.onclick = function(){
   navigation.classList.toggle('active');
   topbarMain.classList.toggle('active');
+
+  espace.classList.toggle('active');
+
+}
+
+IonEspace.onclick = function () {
+  navigation.style.display = "none";
+  location.reload();
 }
 
 

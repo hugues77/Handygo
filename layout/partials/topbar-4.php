@@ -12,7 +12,7 @@
         </li> -->
         <li>
             <!-- <ion-icon name="logo-apple"></ion-icon> -->
-            <span>Mon Esapce Abonné.e</span>
+            <span class="espace">Mon Esapce Abonné.e <ion-icon name="close-circle-outline" class="icon-espace"></ion-icon></span>
         </li>
         <li>
             <a href="/abonnes">
@@ -60,3 +60,20 @@
     </ul>
     <div class="toggle"></div>
 </div>
+<div class="home-main">
+    <div class="topbar-main">
+        <div class="toggle">
+            <ion-icon name="menu-outline"></ion-icon>
+        </div>
+        <div class="search">
+            <label for="">
+                <input type="text" placeholder="recherche ici">
+                <ion-icon name="search-outline"></ion-icon>
+            </label>
+        </div>
+        <!-- userImg -->
+        <div class="user">
+            <!-- <img src="../images/users/hand.jpg" alt=""> -->
+            <span class="icon"><?= $row['Image'] != 'image.png' ? '<img src="../images/users/' . $row['User_time'] . '/' . $row['Image'] . ' " alt=" ' . $row['Prenom'] . ' ">' : '<img src="../images/users/image.png" alt="' . $row['Prenom'] . '">' ?></span>
+        </div>
+    </div>

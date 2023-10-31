@@ -45,7 +45,7 @@ continue_loginBtn.onclick = () =>{
                 // successTextLogin.style.display = "block";
                 // errorTextLogin.style.display = "none";
                 // alert("on a gagné !");
-                window.location="/abonnes";
+                window.location="/espace-membre";
             }else{
                 errorTextLogin.textContent = (data.msg);
                 errorTextLogin.style.display = "block";
