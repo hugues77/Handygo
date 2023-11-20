@@ -32,12 +32,15 @@ let topbarMain = document.querySelector('.home-main');
 
 let espace = document.querySelector('.espace');
 let IonEspace = document.querySelector('.icon-espace');
+let roundProfil = document.querySelector(".round-profil"); 
+
 
 toggleBtn.onclick = function(){
   navigation.classList.toggle('active');
   topbarMain.classList.toggle('active');
 
   espace.classList.toggle('active');
+  roundProfil.classList.toggle('active');
 
 }
 

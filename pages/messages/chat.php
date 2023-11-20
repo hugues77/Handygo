@@ -3,7 +3,7 @@
 if(!isset($_SESSION['unique_id'])){
     header("Location:/form");
 }elseif($_SESSION['unique_id'] == $params['user_id']){
-    header("Location:/abonnes");
+    header("Location:/espace-membre");
 }
 $title = "Partager vos trajets avec vos proches";
 //menu - Navbar

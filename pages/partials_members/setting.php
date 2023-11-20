@@ -30,13 +30,13 @@ require_once "layout/partials/topbar-2.php";
                                 <!-- <i class="fas fa-plus"></i> -->
                             </div>
                         </a>
-                        <a href="/informations/archives">
+                        <a href="/informations/preferences">
                             <div class="mesinfos-trajets">
-                                Mes Préferences
+                                Mes Préférences
                                 <!-- <i class="fas fa-plus"></i> -->
                             </div>
                         </a>
-                        <a href="/informations/archives">
+                        <a href="/informations/user-data"> 
                             <div class="mesinfos-trajets">
                                 Protection  de mes données
                                 <!-- <i class="fas fa-plus"></i> -->

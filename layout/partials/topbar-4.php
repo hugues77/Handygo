@@ -15,7 +15,7 @@
             <span class="espace">Mon Esapce Abonné.e <ion-icon name="close-circle-outline" class="icon-espace"></ion-icon></span>
         </li>
         <li>
-            <a href="/abonnes">
+            <a href="/espace-membre">
                 <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
                 <span class="title">Dashboard</span>
             </a>
@@ -74,6 +74,6 @@
         <!-- userImg -->
         <div class="user">
             <!-- <img src="../images/users/hand.jpg" alt=""> -->
-            <span class="icon"><?= $row['Image'] != 'image.png' ? '<img src="../images/users/' . $row['User_time'] . '/' . $row['Image'] . ' " alt=" ' . $row['Prenom'] . ' ">' : '<img src="../images/users/image.png" alt="' . $row['Prenom'] . '">' ?></span>
+            <span class="icon"><?= $row['Image'] != 'image.png' ? '<img src="../../images/users/' . $row['User_time'] . '/' . $row['Image'] . ' " alt=" ' . $row['Prenom'] . ' ">' : '<img src="../images/users/image.png" alt="' . $row['Prenom'] . '">' ?></span>
         </div>
     </div>

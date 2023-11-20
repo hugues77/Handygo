@@ -1391,7 +1391,7 @@ button.btn-login {
   background: #04befe;
   width: 35px;
   height: 35px;
-  text-align: center;
+  text-align: center;  
   line-height: 35px;
   border-radius: 50%;
   overflow: hidden;
@@ -1468,7 +1468,7 @@ button.btn-login {
   width: calc(100% - 80px);
   left: 80px;
 }
-.topbar-3 .home_content .round-profil.active {
+.topbar-4 .content-main .round-profil.active {
   /* bottom: 145px; */
   right: 560px;
 }
@@ -1603,12 +1603,16 @@ button.btn-login {
   border-radius: 5px; */
   margin-right: 10px;
   font-size: 18px;
+  margin-bottom: 60px;
+}
+.topbar-4 .content-main .identite .vehicule span,
+.topbar-4 .content-main .identite .pieces span {
+  cursor: pointer;
 }
 .topbar-4 .content-main .identite .vehicule span i,
 .topbar-4 .content-main .identite .pieces span i {
   color: crimson;
   margin-right: 5px;
-  cursor: pointer;
   margin-bottom: 10px;
 }
 .topbar-4 .content-main .identite .vehicule span i.fa-hourglass-start,
@@ -1651,7 +1655,8 @@ button.btn-login {
   padding: 5px;
   /* margin-left: 685px; */
   position: relative;
-  left: 62%;
+  /* left: 62%; */
+  float: right;
 }
 .topbar-4 .content-main .mesinfos1 i.active {
   position: relative;
@@ -1694,7 +1699,9 @@ button.btn-login {
   cursor: pointer;
   margin-right: 10px;
 }
+
 .formulaire-info form.complete-user .field-user,
+.formulaire-info form.info-user .field-user-btn,
 .formulaire-info form.info-user .field-user {
   display: flex;
 }
@@ -1702,6 +1709,7 @@ button.btn-login {
   margin-top: -25px;
 }
 .formulaire-info form.complete-user .field-user .m-field,
+.formulaire-info form.info-user .field-user-btn .m-field,
 .formulaire-info form.info-user .field-user .m-field {
   margin-right: 10px;
 }
@@ -1713,24 +1721,54 @@ button.btn-login {
   margin-top: 25px;
 }
 
+.modal-box-user{
+  z-index: 9999;
+  max-width: 600px;
+  width: 100%;
+  /* background: #222; */
+  border-radius: 10px;
+  color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  /* padding: 10px; */
+  transform: translate(-50%, -50%) scale(1.2);
+  /* display: flex; */
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+  /* opacity: 0; */
+  /* pointer-events: none; */
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.30);
+  opacity: 0;
+  visibility: hidden;
+  
+}
+.modal-box-user.active{
+  visibility: visible;
+  opacity: 1;
+  top: 40%;
+  transition: 0.5s;
+}
+
 .formulaire-info .accordion-menu {
-  margin-top: 25px;
+  /* margin-top: 25px; */
 }
 
 .formulaire-info .accordion-menu .dropdown {
-  margin-top: 10px;
+  /* margin-top: 10px; */
   cursor: pointer;
   font-size: 18px;
   /* display: block; */
   padding: 15px 15px 15px 45px;
   /* border-bottom: 2px solid #2d374d; */
-  background: #005b8f;
-  color: #999;
+  background: var(--blue);
+  color: var(--white);
   position: relative;
   transition: 0.4s ease;
 }
 .formulaire-info .accordion-menu .dropdown:hover {
-  background: #04befe;
+  background:#048ad7;
   color: #fff;
 }
 .formulaire-info .accordion-menu .dropdown .fa-chevron-down {
@@ -1739,7 +1777,7 @@ button.btn-login {
   transition: 0.3s ease-in-out;
 }
 .formulaire-info .accordion-menu .submenuItems {
-  display: none;
+  /* display: none; */
   background: #2d374d;
   color: #fff;
   padding: 12px 12px 12px 45px;
@@ -1757,11 +1795,17 @@ button.btn-login {
   color: #fff;
   background: #04befe;
 }
+.formulaire-info .accordion-menu .dropdown span i{
+  margin-right: 3px;
+}
 .formulaire-info .accordion-menu .active .dropdown .fa-chevron-down {
   transform: rotate(180deg);
 }
 .formulaire-info .accordion-menu .active .submenuItems {
   display: block;
+}
+.formulaire-info .accordion-menu .submenuItems h4{
+  margin-bottom: 15px;
 }
 .formulaire-info .accordion-menu form .buttons {
   display: grid;
@@ -1794,15 +1838,34 @@ button.btn-login {
   margin-left: 3px;
   /* border-radius: 6px; */
 }
-.formulaire-info form.form-complete-user .field input {
-  height: 100%;
+.formulaire-info .accordion-menu form .buttons .btn-fermer:hover{
+  background: #fff;
+  color: crimson;
+}
+.formulaire-info .accordion-menu form .buttons .btn-envoyer:hover{
+  background: #fff;
+  color: #182c61;
+}
+.formulaire-info form.form-complete-user .field input,
+.formulaire-info form.form-complete-user .field button {
+  height: 35px;
   width: 100%;
   border: 1px solid lightgrey;
-  border-radius: 5px;
-  font-size: 18px;
+  border-radius: 4px;
+  font-size: 17px;
   padding-left: 15px;
   color: #222;
-  font-weight: 300;
+  /* font-weight: 300; */
+}
+.formulaire-info form.form-complete-user .field input::placeholder,
+.formulaire-info form.form-complete-user .field button{
+  font-size: 15px;
+}
+.formulaire-info form.form-complete-user .field {
+  margin-top: -5px;
+}
+.formulaire-info form.form-complete-user .field span.custom-text{
+  font-size: 12px;
 }
 .formulaire-info small.justificatif {
   font-family: "Poppins";
@@ -1811,7 +1874,7 @@ button.btn-login {
   text-align: justify;
 }
 
-/* topbar-3 - trajets */
+/* topbar-4 Espace Membre - trajets */
 
 .topbar-4 .content-main .trajet-es .trajet-aucun {
   padding-top: 120px;
@@ -1907,7 +1970,7 @@ button.btn-login {
   --black2: #999;
 }
 .abonnes-2{
-  min-height: 150vh;
+  min-height: 140vh;
   overflow-x: hidden;
 }
 .abonnes-2 .navigation{
@@ -1921,6 +1984,13 @@ button.btn-login {
 }
 .abonnes-2 .navigation.active{
   width: 60px;
+}
+/* rendre background floue */
+.abonnes-2 .profil.active{
+  filter: blur(20px);
+  pointer-events: none;
+  user-select: none;
+
 }
 .abonnes-2 .navigation ul{
   position: absolute;
@@ -2799,11 +2869,15 @@ section .annonces-2 {
   text-transform: capitalize;
 }
 .trip .trip-content .col-trip2 .prix,
-.avis .avis-content .col-avis2 .comment .profil {
+.avis .col-avis2 .comment .profil {
   display: grid;
   grid-template-columns: 50% 50%;
   margin-top: 10px;
 }
+
+
+
+
 .trip .trip-content .col-trip2 .prix .colis {
   text-align: right;
 }
@@ -3094,64 +3168,66 @@ section .annonces-2 {
 }
 
 /* Avis page styling start */
-.avis .avis-content .col-avis2 h2.text-title {
+.avis .col-avis2 h2.text-title {
   text-align: center;
   color: #182c61;
-  margin-top: 50px;
   margin-bottom: 20px;
   font-size: 35px;
+  margin-top: 100px;
+
 }
-.avis .avis-content .col-avis2 .note-gen {
+
+.avis .col-avis2 .note-gen {
   font-size: 70px;
   font-weight: 500;
 }
-.avis .avis-content .col-avis2 small {
+.avis .col-avis2 small {
   position: relative;
   top: -20px;
   font-weight: 500;
 }
-.avis .avis-content .col-avis2 .avis {
+.avis .col-avis2 .avis {
   display: grid;
   grid-template-columns: 90% 10%;
   font-weight: 700;
   margin-top: 5px;
 }
-.avis .avis-content .col-avis2 .avis .fleche {
+.avis .col-avis2 .avis .fleche {
   text-align: right;
 }
-.avis .avis-content .col-avis2 .comment .profil .user-img {
+.avis .col-avis2 .comment .profil .user-img {
   text-align: right;
 }
-.avis .avis-content .col-avis2 .comment a {
+.avis .col-avis2 .comment a {
   text-decoration: none;
 }
-.avis .avis-content .col-avis2 .comment a .profil {
+.avis .col-avis2 .comment a .profil {
   background: #222;
   padding: 5px;
   border-radius: 4px;
   color: #fff;
 }
-.avis .avis-content .col-avis2 .comment a .user-img i {
+.avis .col-avis2 .comment a .user-img i {
   margin-left: 10px;
   color: #fff;
   position: relative;
   top: -15px;
 }
-.avis .avis-content .col-avis2 .comment .profil img {
+.avis .col-avis2 .comment .profil img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
 }
-.avis .avis-content .col-avis2 .comment .profil .name-user {
+.avis .col-avis2 .comment .profil .name-user {
   margin-top: 10px;
 }
-.avis .avis-content .col-avis2 .comment .title-avis {
+.avis .col-avis2 .comment .title-avis {
   color: crimson;
   font-size: 20px;
   font-weight: 500;
   margin-top: 10px;
 }
-.avis .avis-content .col-avis2 .comment small {
+.avis .col-avis2 .comment small {
   color: darkgray;
   font-size: 12px;
 }
@@ -4405,7 +4481,8 @@ section .annonces-2 {
 .modify-trip .form-modify-trip .title-trip-4 i,
 .modify-trip .form-modify-trip .title-trip-5 i {
   position: relative;
-  right: -55px;
+  /* right: -55px; */
+  float: right;
   cursor: pointer;
 }
 
@@ -5514,7 +5591,95 @@ section .annonces-2 {
   right: 560px;
 }
 
-
+.topbar-4 .round-profil {
+  position: absolute;
+  /* bottom: 145px;
+  right: 450px; */
+  margin: -60px 0px 0px 270px;
+}
+.topbar-4 .content-main .btn-profil{
+  display: block;
+}
+.topbar-4 .content-main .btn-profil .btn-voir {
+  display: none;
+}
+.topbar-4 .content-main .btn-profil .btn-pub {
+  /* display: inline-block; */
+  background: crimson;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px 30px;
+  margin-top: 20px;
+  border-radius: 6px;
+  border: 2px solid crimson;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.topbar-4 .content-main .trajet-es .trajet-oui .btn-pub,
+.topbar-4 .content-main .trajet-es .trajet-non .btn-pub {
+  text-decoration: none;
+  /* display: inline-block; */
+  /* background: #04befe; */
+  color: crimson;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 30px;
+  margin-top: 20px;
+  border-radius: 6px;
+  border: 2px solid #04befe;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.topbar-4 .content-main .trajet-es .trajet-oui .btn-voir,
+.topbar-4 .content-main .trajet-es .trajet-non .btn-voir {
+  text-decoration: none;
+  background: crimson;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 30px;
+  margin-top: 20px;
+  border-radius: 6px;
+  border: 2px solid crimson;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.topbar-4 .content-main .trajet-es .trajet-oui .btn-pub:hover,
+.topbar-4 .content-main .trajet-es .trajet-non .btn-pub:hover {
+  background: #04befe;
+  color: #fff;
+}
+.topbar-4 .content-main .trajet-es .trajet-oui .btn-voir:hover,
+.topbar-4 .content-main .trajet-es .trajet-non .btn-voir:hover {
+  background: none;
+  color: crimson;
+}
+.topbar-4 .content-main .trajet-es .trajet-non,
+.topbar-4 .content-main .trajet-es .trajet-oui {
+  text-align: center;
+}
+.topbar-4 .content-main .trajet-es hr.trj {
+  border: 2px solid #222;
+  margin-top: 12px;
+}
+.topbar-4 .content-main .mesinfos-trajets {
+  margin-top: 10px;
+  background: #04befe;
+  color: #fff;
+  font-size: 18px;
+  padding: 25px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.formulaire-info form.info-user .field-user-btn{
+  display: block;
+}
+.formulaire-info form.info-user .field-user-btn .m-field{
+  display: none;
+}
 
 
   /* styling user-login */
@@ -5614,7 +5779,7 @@ section .annonces-2 {
   }
 
   /* profil user */
-  .topbar-3 .home_content .identite {
+  .topbar-4 .content-main .identite {
     display: block;
   }
 
@@ -5695,6 +5860,40 @@ section .annonces-2 {
 
     grid-template-columns: repeat(1,1fr);
    
+  }
+  /* profil phone */
+  .modal-box-user{
+    z-index: 9999;
+    max-width: 400px;
+    width: 100%;
+    /* background: #222; */
+    border-radius: 10px;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 25%;
+    /* padding: 10px; */
+    transform: translate(-50%, -50%) scale(1.2);
+    /* display: flex; */
+    /* flex-direction: column; */
+    align-items: center;
+    transition: all 0.3s ease;
+    /* opacity: 0; */
+    /* pointer-events: none; */
+  }
+  .formulaire-info .accordion-menu .submenuItems {
+    /* display: none; */
+    background: #2d374d;
+    color: #fff;
+    padding: 12px 12px 12px 12px;
+  }
+  .formulaire-info .accordion-menu .dropdown {
+    /* margin-top: 10px; */
+    cursor: pointer;
+    font-size: 16px;
+    /* display: block; */
+    padding: 15px 15px 15px 15px;
+    
   }
 
 }

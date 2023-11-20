@@ -16,7 +16,7 @@ $old = ($year-$naissance);
 
 
 ?> 
-<div class="abonnes abonnes-2">
+<div class="abonnes abonnes-2" id="profil">
     <div class="">
         <div class="abonnes-content">
             <div class="topbar-4">
@@ -25,7 +25,7 @@ $old = ($year-$naissance);
                     <div class="content-main">
                         <h2 class="title-heading">Mon Profil Handy go, Débutant</h2>
                         
-                        <form class="" enctype="multipart/form-data">
+                        <form class="profil" enctype="multipart/form-data">
                             <div class="error-text error-name"></div>
 
                             <div class="user">
@@ -68,7 +68,7 @@ $old = ($year-$naissance);
                                     }
                                 ?> 
                                 <div class="vehicule">
-                                    <span><i class="fa-solid fa-hourglass-start"></i>Immatriculation vérifiée</span><br>
+                                    <span class="immat"><i class="fa-solid fa-hourglass-start"></i>Immatriculation vérifiée</span><br>
                                     <span><i class="fas fa-xmark-circle"></i>Permis de conduire vérifié</span><br>
                                     <span><i class="fas fa-xmark-circle"></i>Numéro de téléphone vérifié</span><br>
                                     <span><i class="fas fa-xmark-circle"></i>Email vérifié</span>
@@ -78,7 +78,7 @@ $old = ($year-$naissance);
                                     <span><i class="fa-solid fa-hourglass-start"></i>Adresse physique vérifiée</span><br>
                                     <span><i class="fas fa-xmark-circle"></i>Casier judiciaire vérifié</span>
                                 </div>
-                            </div>
+                            </div> 
 
                             <div class="user-bio">
                                 <p><i class="fa-solid fa-quote-left"></i><?= $row['Bio'] ? $row['Bio'] : "Handygo me facilite tellement la vie pour l'ensemble de mes trajets,Rejoins-nous dans l'aventure" ?></p>
@@ -88,19 +88,57 @@ $old = ($year-$naissance);
                                     Modifier mes informations personelles<i class="fas fa-plus"></i>
                                 </div>
                             </a>
-                            <a href="/informations/complete_user">
+                            <!-- <a href="/informations/complete_user">
                                 <div class="mesinfos">
                                     Faire Vérifier mes informations <i class="fas fa-plus"></i>
                                 </div>
-                            </a>
+                            </a> -->
                             <div class="btn-profil">
-
                                 <div class="btn-voir cancel-btn" onClick="cancelBtn()"><i class="fas fa-plus"></i> Annuler la modification</div>
 
                                 <div class="btn-pub image-profil"><i class="fas fa-folder-open"></i> Modifier ma photo de profil</div>
                             </div>
                         </form>
+
+                        <!-- form modal test -->
+                        <div class="formulaire-info modal-box-user">
+                            <div class="error-text error-name"></div>
+
+                            <div class="accordion-menu">
+                                <div class="link">
+                                    <div class="dropdown">
+                                        <span class="immat"><i class="fa-solid fa-hourglass-start"></i>Vérification Immatriculation</span>
+                                    </div>
+
+                                    <!-- boite modal -->
+                                    <div class="submenuItems">
+                                        <div class="error-text error-profil"></div>
+
+                                        <!-- <div class="header-menu"> -->
+                                            <!-- <i class="fa-solid fa-pen-to-square"></i> --> 
+                                            <h4>Faites vérifier l'identité du vehicule </h4>
+                                            <!-- <h4>Maximisez vos chances sur Handygo ? Envoie protegé!</h4> -->
+                                        <!-- </div> -->
+                                        <form method="post" class="form-complete-user" enctype="multipart/form-data">
+                                            <div class="field">
+                                                <input type="text" name="num_immat" placeholder="Numéro d'immatriculation" id="">
+                                            </div>
+                                            <div class="field">
+                                                <input type="file" name="image-file-immat" id="file-user" hidden="hidden">
+                                                <button class="custom-image-immat"><i class="fas fa-camera-retro camera-retro"></i>Choisir votre fichier</button>
+                                                <span class="custom-text">Aucun fichier choisi pour l'instant</span>
+                                            </div>
+                                            <div class="buttons">
+                                                <div class="btn-fermer">Fermer</div>
+                                                <button type="submit" name="btn-immat" class="btn-envoyer btn-immat-envoyer">Envoyer</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    
                 </div>
             </div>
         </div>

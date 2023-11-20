@@ -29,8 +29,8 @@
 
                
         <!-- Script js -->
-        <script src="../js/script.js"></script>
-        <script src="../js/app.js"></script>
+        <script src="../../js/script.js"></script>
+        <script src="../../js/app.js"></script>
         <script src="../js/app-2.js"></script>
         <script src="../js/modal-temoignage.js"></script>
         <script src="../js/calendar.app.js"></script>

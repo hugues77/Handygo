@@ -61,7 +61,7 @@
     <!-- content modal / form  -->
     <div class="modal-box">
         <div class="error-text error"></div>
-        <i class="fa-solid fa-pen-to-square"></i>
+        <i class="fa-solid fa-pen-to-square"></i>   
         <h2>Laissez-nous un commentaire </h2>
         <h4>Qu'est ce que vous en pensez sur Handygo ? Exprimez-vous!</h4>
         <form method="post" class="teams-modal">

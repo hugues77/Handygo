@@ -14,7 +14,7 @@ formNaissance.onsubmit = (e)=>{
 }
 
 customImage.onclick = () =>{
-    fileUser.click();  
+    fileUser.click(); 
 }
 fileUser.onchange = () =>{
     if(fileUser.value){
